@@ -4,7 +4,7 @@ import PriceLabel from './PriceLabel';
 
 export default {
     component: PriceLabel,
-    title: 'PriceLabel'
+    title: 'Atoms/PriceLabel'
 }
 
 export const Default = () => <PriceLabel/>
