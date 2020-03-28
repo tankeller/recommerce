@@ -25,7 +25,7 @@ PriceLabel.defaultProps = {
 
 PriceLabel.propTypes = {
     className: PropTypes.string,
-    price: PropTypes.number,
+    price: PropTypes.number.isRequired,
     currency: PropTypes.string,
     currencyPosition: PropTypes.string
 }
