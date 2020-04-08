@@ -1,33 +1,36 @@
-import React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
 import PropTypes from 'prop-types';
 
-import './priceLabel.css';
-
-const currencyPositions = {
-    LEADING: 'leading',
-    TRAILING: 'trailing'
-}
-
-const PriceLabel = ({ className, price, currency, currencyPosition}) => {
+const PriceLabel = ({ className, price, crossed, currency, currencyPosition, ...restProps}) => {    
     return (
-        <span className={`${className} price-label`}>
-            {currencyPosition === currencyPositions.TRAILING ? price + currency : currency + price}
+        <span
+            css={{
+                fontSize: crossed ?  '1rem' : '1.25rem',
+                lineHeight: '1.5rem',
+                color: '#828282',
+                textDecoration: crossed ? 'line-through' : 'none',
+                marginRight: crossed ? 3 : 0
+            }}
+            className={`${className} price-label`} {...restProps}>
+            {currencyPosition === 'trailing' ? price + currency : currency + price}
         </span>
     )
 }
 
 PriceLabel.defaultProps = {
     className: '',
-    price: 0,
+    crossed: false,
     currency: '€',
-    currencyPosition: currencyPositions.TRAILING
+    currencyPosition: 'trailing'
 }
 
 PriceLabel.propTypes = {
     className: PropTypes.string,
     price: PropTypes.number.isRequired,
+    crossed: PropTypes.bool,
     currency: PropTypes.string,
-    currencyPosition: PropTypes.string
+    currencyPosition: PropTypes.oneOf(['leading', 'trailing'])
 }
 
 export default PriceLabel;
