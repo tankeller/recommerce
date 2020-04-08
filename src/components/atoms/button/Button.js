@@ -15,29 +15,17 @@ const Button = ({ type, size, onClick, className, disabled, children }) => {
     )
 }
 
-const ButtonType = {
-    BUTTON: 'button',
-    SUBMIT: 'submit',
-    RESET: 'reset'
-}
-
-const ButtonSize = {
-    SMALL: 'small',
-    MEDIUM: 'medium',
-    LARGE: 'large'
-}
-
 Button.propTypes = {
-    type: PropTypes.string,
-    size: PropTypes.string,
+    type: PropTypes.oneOf(['button', 'submit', 'reset']),
+    size: PropTypes.oneOf('small', 'medium', 'large'),
     onClick: PropTypes.func,
     className: PropTypes.string,
     disabled: PropTypes.bool
 }
 
 Button.defaultProps = {
-    type: ButtonType.BUTTON,
-    size: ButtonSize.MEDIUM,
+    type: 'button',
+    size: 'medium',
     onClick: () => {},
     className: '',
     disabled: false
