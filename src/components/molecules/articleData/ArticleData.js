@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Title from '../../atoms/title/Title';
-import PriceLabel from '../../atoms/priceLabel/PriceLabel';
+import PriceContainer from '../../molecules/priceContainer/PriceContainer';
 
 import './articledata.css';
 
@@ -10,7 +10,7 @@ const ArticleData = ({article, className, ...restProps}) => {
     return (
         <div className={`articleData ${className}`} {...restProps}>
             <Title>{article.name}</Title>
-            <PriceLabel price={article.price} />
+            <PriceContainer article={article} />
         </div>
     )
 }
