@@ -3,39 +3,36 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import PropTypes from 'prop-types';
 
-import ArticleData from '../../molecules/articleData/ArticleData'
+import ArticleData from '../../molecules/articleData/ArticleData';
 
-const ArticleBox = ({article, ...restProps}) => {
-    return (
+const ArticleBox = ({ article, ...restProps }) => {
+  return (
     <div
-        css={{
-          textAlign: 'center',
-          borderWidth: 1,
-          borderStyle: 'solid',
-          borderColor: '#eeeeee'
-        }} 
-        {...restProps}
+      css={{
+        textAlign: 'center'
+      }}
+      {...restProps}
     >
-        <a  
+      <a
         css={{
-            textDecoration: 'none'
+          textDecoration: 'none'
         }}
         href={`/${article.name}`}
-        >
+      >
         <img src={article.img} alt={article.name} />
         <ArticleData article={article} />
-        </a>
+      </a>
     </div>
-    )
-}
+  );
+};
 
 ArticleBox.defaultProps = {
-    className: ''   
-}
+  className: ''
+};
 
 ArticleBox.propTypes = {
-    className: PropTypes.string,
-    article: PropTypes.object.isRequired
-}
+  className: PropTypes.string,
+  article: PropTypes.object.isRequired
+};
 
 export default ArticleBox;
