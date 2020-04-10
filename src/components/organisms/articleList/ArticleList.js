@@ -3,7 +3,7 @@ import { jsx } from '@emotion/core';
 
 import ArticleBox from '../articleBox/ArticleBox';
 
-const ArticleList = ({ articles, columns, ...restprops }) => {
+const ArticleList = ({ articles, ...restprops }) => {
   return (
     <div
       css={{
@@ -20,7 +20,7 @@ const ArticleList = ({ articles, columns, ...restprops }) => {
           <ArticleBox
             css={{
               padding: '0% 1%',
-              flexBasis: '24%',
+              flexBasis: '23%',
             }}
             article={article}
           />
