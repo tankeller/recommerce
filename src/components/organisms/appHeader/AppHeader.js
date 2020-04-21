@@ -3,6 +3,8 @@ import { jsx } from '@emotion/core';
 
 import MainHeaderNavigation from '../mainNavigation/MainHeaderNavigation';
 
+import categories from '../../../assets/static/categories.json';
+
 const AppHeader = () => {
   return (
     <header
@@ -13,7 +15,7 @@ const AppHeader = () => {
         borderBottom: '1px solid #eee',
       }}
     >
-      <MainHeaderNavigation />
+      <MainHeaderNavigation categories={categories} />
     </header>
   );
 };
