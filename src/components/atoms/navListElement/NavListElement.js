@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
+import PropTypes from 'prop-types';
 
-const NavListElement = ({ isActive, children }) => {
+const NavListElement = ({ isActive, children, ...props }) => {
   return (
     <li
       css={{
@@ -11,10 +12,19 @@ const NavListElement = ({ isActive, children }) => {
         borderBottomStyle: isActive ? 'solid' : '',
         listStyle: 'none',
       }}
+      {...props}
     >
       {children}
     </li>
   );
+};
+
+NavListElement.defaultProps = {
+  isActive: true,
+};
+
+NavListElement.propTypes = {
+  isActive: PropTypes.bool,
 };
 
 export default NavListElement;
