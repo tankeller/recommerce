@@ -1,15 +1,17 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import { Link } from '@reach/router';
+import PropTypes from 'prop-types';
 
-const MainHeaderNavigation = ({ className, categories, restProps }) => {
+import NavListElement from '../../atoms/navListElement/NavListElement';
+import NavLink from '../../atoms/navLink/NavLink';
+
+const MainHeaderNavigation = ({ showHomeLink, categories, ...restProps }) => {
   return (
-    <div
+    <nav
       css={{
         width: '100%',
         margin: '0 auto',
       }}
-      className={className}
       {...restProps}
     >
       <ul
@@ -17,37 +19,33 @@ const MainHeaderNavigation = ({ className, categories, restProps }) => {
           display: 'flex',
         }}
       >
+        {showHomeLink ? (
+          <NavListElement>
+            <NavLink to="/">Home</NavLink>
+          </NavListElement>
+        ) : null}
         {categories.map((category) => {
           return (
-            <li
-              css={{
-                padding: '4px 8px',
-                borderBottom: category.active ? '2px' : '',
-                borderBottomColor: category.active ? 'darkgreen' : '',
-                borderBottomStyle: category.active ? 'solid' : '',
-                listStyle: 'none',
-              }}
-            >
-              <Link
-                css={{
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  color: 'darkgray',
-                  '&:hover': {
-                    color: 'darkgreen',
-                  },
-                }}
-                key={category.id}
-                to={`category/${category.id}`}
-              >
+            <NavListElement isActive={category.active ? true : false}>
+              <NavLink key={category.id} to={`category/${category.id}`}>
                 {category.name}
-              </Link>
-            </li>
+              </NavLink>
+            </NavListElement>
           );
         })}
       </ul>
-    </div>
+    </nav>
   );
+};
+
+MainHeaderNavigation.defaultProps = {
+  showHomeLink: true,
+  categories: [],
+};
+
+MainHeaderNavigation.porpTypes = {
+  showHomeLink: PropTypes.bool,
+  categories: PropTypes.array,
 };
 
 export default MainHeaderNavigation;
