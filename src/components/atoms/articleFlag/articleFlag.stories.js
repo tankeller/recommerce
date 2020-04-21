@@ -4,7 +4,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import ArticleFlag from './ArticleFlag';
 
 export default {
-  title: 'ArticleFlag',
+  title: 'Atoms/ArticleFlag',
   component: ArticleFlag,
   decorators: [withKnobs],
 };
