@@ -1,8 +1,14 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 
+import PageTemplate from '../components/templates/PageTemplate';
+
 const Listing = () => {
-  return <div>This is the Listing Page, yay</div>;
+  return (
+    <PageTemplate>
+      <div>This is the Listing Page</div>
+    </PageTemplate>
+  );
 };
 
 export default Listing;
