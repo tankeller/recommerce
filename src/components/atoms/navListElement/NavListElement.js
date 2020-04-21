@@ -20,7 +20,7 @@ const NavListElement = ({ isActive, children, ...props }) => {
 };
 
 NavListElement.defaultProps = {
-  isActive: true,
+  isActive: false,
 };
 
 NavListElement.propTypes = {
