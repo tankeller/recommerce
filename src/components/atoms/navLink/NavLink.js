@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { Link } from '@reach/router';
+import Proptypes from 'prop-types';
 
 const NavLink = ({ children, ...props }) => {
   return (
@@ -18,6 +19,10 @@ const NavLink = ({ children, ...props }) => {
       {children}
     </Link>
   );
+};
+
+NavLink.propTypes = {
+  children: Proptypes.any.isRequired,
 };
 
 export default NavLink;
