@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 
-const AppFooter = () => {
+const AppFooter = ({ ...props }) => {
   return (
     <footer
       css={{
@@ -9,6 +9,7 @@ const AppFooter = () => {
         minHeight: '100px',
         textAlign: 'center',
       }}
+      {...props}
     >
       ©copyrights by Portaltech
     </footer>
