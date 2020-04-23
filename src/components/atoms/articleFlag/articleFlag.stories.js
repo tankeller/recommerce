@@ -1,5 +1,5 @@
 import React from 'react';
-import { withKnobs } from '@storybook/addon-knobs';
+import { withKnobs, text } from '@storybook/addon-knobs';
 
 import ArticleFlag from './ArticleFlag';
 
@@ -9,4 +9,10 @@ export default {
   decorators: [withKnobs],
 };
 
-export const Default = () => <ArticleFlag> New </ArticleFlag>;
+export const NewFlag = () => (
+  <ArticleFlag> {text('Label', 'New')} </ArticleFlag>
+);
+
+export const SaleFlag = () => (
+  <ArticleFlag> {text('Label', 'Sale')} </ArticleFlag>
+);
