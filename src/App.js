@@ -4,6 +4,7 @@ import { ThemeProvider } from 'emotion-theming';
 
 import theme from './assets/theme';
 
+import GlobalStyle from './GlobalStyle';
 import AppHeader from './components/organisms/appHeader/AppHeader';
 import AppFooter from './components/organisms/appFooter/AppFooter';
 import Home from './pages/Home';
@@ -14,6 +15,7 @@ function App() {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
+        <GlobalStyle />
         <AppHeader />
         <Router>
           <Home path="/" />
