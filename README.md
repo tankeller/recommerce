@@ -1,16 +1,73 @@
+# Overview
+
+Trying to build a React Storefront that can be used on different Storefronts.
+
+Similar to Vue-Storefront: https://demo.vuestorefront.io/ or
+Shopware 6 Standard: https://www.shopwaredemo.store/
+
+Project uses Storybook for independent component development. More information below.
+
+Third Party libraries:
+emotion for styling components: https://emotion.sh/docs/styled
+Storybook to display components: https://storybook.js.org/docs/basics/introduction/
+Reach Router: https://reach.tech/router/example/basic
+
+Project uses Atomic Design: https://bradfrost.com/blog/post/atomic-web-design/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+---
+
+## Installation
+
+- git clone project
+- move into project directory
+- Install node_modules with `npm install`
+- Then either start the shop app or storybook, see `Available Scripts`below
+
+---
+
+## Storybook
+
+Every component should have stories with all states.
+
+### Storybook Addons/Plugins
+
+#### Knobs
+
+Allows to create dynamic values in the stories.
+
+https://github.com/storybookjs/storybook/tree/master/addons/knobs
+
+#### Docs
+
+Automatically adds a Docs Tab to every component which shows all props and more.
+
+https://github.com/storybookjs/storybook/tree/master/addons/docs
+
+#### Actions
+
+Storybook Addon Actions can be used to display data received by event handlers.
+
+https://www.npmjs.com/package/@storybook/addon-actions
+
+---
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm start` - Run the Shop app
 
-Runs the app in the development mode.<br />
+Runs the shop app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
+
+### `npm run storybook` - Run the Storybook app
+
+Starts the Storybook application
 
 ### `npm test`
 
@@ -26,43 +83,3 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
