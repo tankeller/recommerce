@@ -12,6 +12,8 @@ emotion for styling components: https://emotion.sh/docs/styled
 Storybook to display components: https://storybook.js.org/docs/basics/introduction/
 Reach Router: https://reach.tech/router/example/basic
 
+Project uses Atomic Design: https://bradfrost.com/blog/post/atomic-web-design/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ---
