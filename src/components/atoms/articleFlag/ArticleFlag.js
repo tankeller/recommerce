@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/core';
 import PropTypes from 'prop-types';
 
-const ArticleFlag = ({ className, children, restProps }) => {
+const ArticleFlag = ({ children, ...props }) => {
   return (
     <div
       css={{
@@ -17,8 +17,7 @@ const ArticleFlag = ({ className, children, restProps }) => {
         textAlign: 'center',
         lineHeight: '50px',
       }}
-      className={`${className}`}
-      {...restProps}
+      {...props}
     >
       {children}
     </div>
