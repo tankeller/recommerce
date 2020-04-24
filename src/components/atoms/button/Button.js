@@ -22,19 +22,19 @@ const Button = ({ type, size, onClick, className, disabled, children }) => {
 
         '&:disabled': {
           backgroundColor: 'gray',
-          cursor: 'not-allowed'
+          cursor: 'not-allowed',
         },
         '&.btn-small': {
           padding: '0.5rem 0.6rem',
         },
         '&.btn-medium': {
           padding: '0.8rem 1rem;',
-          fontSize: '1rem'
+          fontSize: '1rem',
         },
         '&.btn-large': {
           padding: '1.2rem 1.4rem',
-          fontSize: '1.33rem'
-        }
+          fontSize: '1.33rem',
+        },
       }}
       className={`${className} btn btn-${size}`}
       onClick={onClick}
@@ -48,7 +48,7 @@ const Button = ({ type, size, onClick, className, disabled, children }) => {
 
 Button.propTypes = {
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
-  size: PropTypes.oneOf('small', 'medium', 'large'),
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
   onClick: PropTypes.func,
   className: PropTypes.string,
   disabled: PropTypes.bool,
