@@ -1,5 +1,8 @@
 import React from 'react';
 import { Router } from '@reach/router';
+import { ThemeProvider } from 'emotion-theming';
+
+import theme from './assets/theme';
 
 import AppHeader from './components/organisms/appHeader/AppHeader';
 import AppFooter from './components/organisms/appFooter/AppFooter';
@@ -10,13 +13,15 @@ import Article from './pages/Article';
 function App() {
   return (
     <div className="App">
-      <AppHeader />
-      <Router>
-        <Home path="/" />
-        <Listing path="/listing/:categoryID" />
-        <Article path="/article/:articleID" />
-      </Router>
-      <AppFooter />
+      <ThemeProvider theme={theme}>
+        <AppHeader />
+        <Router>
+          <Home path="/" />
+          <Listing path="/listing/:categoryID" />
+          <Article path="/article/:articleID" />
+        </Router>
+        <AppFooter />
+      </ThemeProvider>
     </div>
   );
 }
