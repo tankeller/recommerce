@@ -6,7 +6,7 @@ import MainHeaderNavigation from './MainHeaderNavigation';
 import categories from '../../../assets/static/categories.json';
 
 export default {
-  title: 'Organisms/MainNavigation',
+  title: 'Organisms/MainHeaderNavigation',
   component: MainHeaderNavigation,
   decorators: [withKnobs],
 };

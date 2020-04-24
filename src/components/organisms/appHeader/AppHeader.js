@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 
-import MainHeaderNavigation from '../mainNavigation/MainHeaderNavigation';
+import MainHeaderNavigation from '../mainHeaderNavigation/MainHeaderNavigation';
 
 import categories from '../../../assets/static/categories.json';
 
