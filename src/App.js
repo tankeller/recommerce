@@ -19,7 +19,7 @@ function App() {
         <AppHeader />
         <Router>
           <Home path="/" />
-          <Listing path="/listing/:categoryID" />
+          <Listing path="/category/:categoryID" />
           <Article path="/article/:articleID" />
         </Router>
         <AppFooter />
