@@ -22,6 +22,7 @@ const ArticleList = ({ articles, ...restprops }) => {
               padding: '0% 1%',
               flexBasis: '23%',
             }}
+            key={article.id}
             article={article}
           />
         );
