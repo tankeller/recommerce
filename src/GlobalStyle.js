@@ -10,9 +10,9 @@ const GlobalStyle = () => {
           fontFamily:
             '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans","Helvetica Neue", sans-serif',
         },
-        code: {
+        'h1,h2,h3,h4,h5': {
           fontFamily:
-            'source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace',
+            '"Roboto", "Oxygen", "Ubuntu", "Cantarell", "Droid Sans","Helvetica Neue", sans-serif',
         },
       }}
     />
