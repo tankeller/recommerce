@@ -10,6 +10,7 @@ const CategoryHeadline = ({ children, ...props }) => {
       css={{
         color: theme.colors.primaryColor,
         textTransform: 'uppercase',
+        fontSize: '30px',
       }}
       {...props}
     >
