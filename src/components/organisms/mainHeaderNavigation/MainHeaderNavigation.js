@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import NavListElement from '../../atoms/navListElement/NavListElement';
 import NavLink from '../../atoms/navLink/NavLink';
+import Icon from '../../atoms/icon/Icon';
 
 const MainHeaderNavigation = ({ showHomeLink, categories, ...restProps }) => {
   return (
@@ -21,7 +22,9 @@ const MainHeaderNavigation = ({ showHomeLink, categories, ...restProps }) => {
       >
         {showHomeLink ? (
           <NavListElement>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/">
+              <Icon name="home" />
+            </NavLink>
           </NavListElement>
         ) : null}
         {categories.map((category) => {
