@@ -8,7 +8,7 @@ export default {
   title: 'Atoms/Icon',
   decorators: [withKnobs],
   parameters: {
-    componentSubtitle: 'Handy status label',
+    componentSubtitle: 'FontAwesome library (free icons)',
   },
 };
 

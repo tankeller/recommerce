@@ -3,7 +3,11 @@ import { jsx } from '@emotion/core';
 import PropTypes from 'prop-types';
 
 /**
- * Use `<Icon />` to include free FontAwesome icons from: https://fontawesome.com/icons?d=gallery&m=free
+ * Component: `<Icon name="shopping-cart" />`
+ *
+ * Rendered HTML:`<i class="fa fa-shopping-cart"></i>`
+ *
+ * Free FontAwesome icons: https://fontawesome.com/icons?d=gallery&m=free
  */
 const Icon = ({ name }) => {
   name = name.toLowerCase();
