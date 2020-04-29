@@ -21,7 +21,7 @@ const CategoryHeadline = ({ children, ...props }) => {
 };
 
 CategoryHeadline.propTypes = {
-  chidlren: PropTypes.any.isRequired,
+  children: PropTypes.any.isRequired,
 };
 
 export default CategoryHeadline;
