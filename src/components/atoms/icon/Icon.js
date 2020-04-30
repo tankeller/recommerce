@@ -85,7 +85,7 @@ const Icon = ({ name, option, className, ...props }) => {
         let mapOptions = element.map((opt) => {
           return opts === '' ? 'fa-' + opt : opts + ' fa-' + opt;
         });
-        opts = mapOptions;
+        opts = mapOptions.join(' ');
       } else {
         // Option: String
         opts = `fa-${element}`;
