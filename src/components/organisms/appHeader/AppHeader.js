@@ -11,7 +11,7 @@ const AppHeader = ({ ...props }) => {
       css={{
         display: 'flex',
         justifyContent: 'space-between',
-        padding: '1.5rem calc((100vw - 1400px) / 2)',
+        padding: '0 calc((100vw - 1400px) / 2)',
         borderBottom: '1px solid #eee',
       }}
       {...props}
