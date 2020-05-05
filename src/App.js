@@ -17,7 +17,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <AppHeader />
-        <Router>
+        <Router primary={false}>
           <Home path="/" />
           <Listing path="/category/:categoryID" />
           <Article path="/article/:articleID" />
