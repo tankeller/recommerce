@@ -1,8 +1,6 @@
 import React from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
 import NavToggle from './NavToggle';
-import { ThemeProvider } from 'emotion-theming';
-import theme from '../../../assets/theme';
 
 export default {
   component: NavToggle,
@@ -13,8 +11,4 @@ export default {
   },
 };
 
-export const Default = () => (
-  <ThemeProvider theme={theme}>
-    <NavToggle />
-  </ThemeProvider>
-);
+export const Default = () => <NavToggle />;
