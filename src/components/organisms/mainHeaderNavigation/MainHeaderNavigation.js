@@ -5,105 +5,50 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import useWindowSize from '../../../assets/hooks/useWindowSize';
 
+import Navigation from '../../molecules/navigation/Navigation';
 import NavListElement from '../../atoms/navListElement/NavListElement';
 import NavLink from '../../atoms/navLink/NavLink';
 import NavToggle from '../../atoms/navToggle/NavToggle';
 import Icon from '../../atoms/icon/Icon';
 
 const MainHeaderNavigation = ({ showHomeLink, categories, ...restProps }) => {
+  const windowSize = useWindowSize();
+  const offCanvas = windowSize.width < 1024;
+  const [open, setOpen] = useState(false);
+  const isHidden = !offCanvas || open ? true : false;
+  const tabIndex = isHidden ? 0 : -1;
+
   /**
    * Actions
    */
-  const [isOpenMenu, setIsOpenMenu] = useState(false);
-  const handleToggleClick = () => {
-    setIsOpenMenu(!isOpenMenu);
-  };
-
   const closeMenu = () => {
-    if (isOpenMenu) {
-      setIsOpenMenu(!isOpenMenu);
+    if (open || (!offCanvas && open)) {
+      setOpen(!open);
     }
   };
 
-  const windowSize = useWindowSize();
-  const isMobileMenu = windowSize.width < 1024;
+  const autoCloseMenu = () => {
+    if (open && !offCanvas) {
+      setOpen(!open);
+    }
+  };
+  autoCloseMenu();
 
   /**
-   * Styling
+   * Component
    */
-  const MainNav = styled.nav`
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
-    min-height: 50px;
-  `;
-
-  const MainNavList = styled.ul`
-    display: flex;
-    min-height: 50px;
-    align-items: center;
-
-    ${(props) =>
-      props.offcanvas &&
-      css`
-        background: #fff;
-        display: block;
-        width: 100vw;
-        max-width: 350px;
-        height: 100vh;
-        padding: 0;
-        position: fixed;
-        top: 0;
-        left: 0;
-        margin: 0;
-        z-index: 1100;
-        transition: all 0.3s ease-in-out;
-        transform: translateX(-100%);
-      `}
-
-    ${(props) =>
-      props.open &&
-      css`
-        transform: translateX(0);
-      `}
-
-      ${(props) =>
-        props.autoClose &&
-        css`
-          transform: translateX(-100%);
-        `}
-  `;
-
-  const MainNavToggle = styled(NavToggle)`
-    position: fixed;
-    top: 0;
-    left: 0;
-    transition: all 0.3s ease-in-out;
-
-    ${(props) =>
-      props.open &&
-      css`
-        left: 300px;
-        z-index: 1300;
-      `}
-  `;
-
-  const Overlay = styled.div`
-    position: fixed;
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 1001;
-  `;
-
   return (
-    <MainNav {...restProps}>
-      <MainNavList offcanvas={isMobileMenu} open={isOpenMenu}>
+    <MainNav>
+      <Navigation
+        open={open}
+        setOpen={setOpen}
+        offCanvas={offCanvas}
+        aria-hidden={!isHidden}
+      >
         {showHomeLink && (
           <NavListElement>
-            <NavLink to="/" onClick={closeMenu}>
-              {isMobileMenu ? 'Home' : <Icon name="home" />}
+            <NavLink to="/" onClick={closeMenu} tabIndex={tabIndex}>
+              {offCanvas ? 'Home' : <Icon name="home" />}
             </NavLink>
           </NavListElement>
         )}
@@ -113,17 +58,19 @@ const MainHeaderNavigation = ({ showHomeLink, categories, ...restProps }) => {
               key={category.id}
               isActive={category.active ? true : false}
             >
-              <NavLink to={`category/${category.id}`} onClick={closeMenu}>
+              <NavLink
+                to={`category/${category.id}`}
+                onClick={closeMenu}
+                tabIndex={tabIndex}
+              >
                 {category.name}
               </NavLink>
             </NavListElement>
           );
         })}
-      </MainNavList>
-      {isMobileMenu && (
-        <MainNavToggle open={isOpenMenu} onClick={handleToggleClick} />
-      )}
-      {isOpenMenu && <Overlay onClick={closeMenu} />}
+      </Navigation>
+      {offCanvas && <NavToggle open={open} setOpen={setOpen} />}
+      {offCanvas && <Overlay open={open} onClick={closeMenu} />}
     </MainNav>
   );
 };
@@ -139,3 +86,34 @@ MainHeaderNavigation.porpTypes = {
 };
 
 export default MainHeaderNavigation;
+
+/**
+ * Styling
+ */
+export const MainNav = styled.nav`
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 50px;
+`;
+
+export const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: -1001;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+
+  ${(props) =>
+    props.open &&
+    css`
+      width: 100%;
+      opacity: 1;
+      z-index: 1001;
+    `}
+`;
