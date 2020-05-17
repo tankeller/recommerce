@@ -1,8 +1,9 @@
 const theme = {
   colors: {
-    primaryColor: 'blue',
+    primaryColor: '#61DBFB',
+    primaryHoverColor: '#61DBFB',
     secondaryColor: 'red',
-    textColor: '#000',
+    textColor: '#828282',
   },
   font: {
     sizes: {
