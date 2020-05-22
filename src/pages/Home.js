@@ -6,6 +6,7 @@ import styled from '@emotion/styled';
 import Ul from '../components/atoms/ul/Ul';
 import List from '../components/molecules/list/List';
 import NavListElement from '../components/atoms/navListElement/NavListElement';
+import ImagePlaceholder from '../components/atoms/imagePlaceholder/ImagePlaceholder';
 
 import Days from '../assets/static/dummy/demoList.json';
 
@@ -34,6 +35,7 @@ const Home = ({ props }) => {
 
       <StyledHeading>Liste</StyledHeading>
       <List direction="vertical" items={Days} />
+      <ImagePlaceholder width="200" height="200" />
     </div>
   );
 };
