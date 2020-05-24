@@ -34,7 +34,9 @@ const Home = ({ props }) => {
       </Ul>
 
       <StyledHeading>Liste</StyledHeading>
-      <List direction="vertical" items={Days} />
+      <List items={Days} />
+
+      <StyledHeading>Image Placeholder</StyledHeading>
       <ImagePlaceholder width="200" height="200" />
     </div>
   );
@@ -47,4 +49,5 @@ export default Home;
  */
 export const StyledHeading = styled.h3`
   color: red;
+  margin-bottom: 10px;
 `;
