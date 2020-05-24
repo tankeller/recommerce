@@ -1,4 +1,4 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
 import { withKnobs, text, select } from '@storybook/addon-knobs';
 import styled from '@emotion/styled';
 
@@ -29,9 +29,43 @@ Das Projekt beinhaltet IMG-Placeholder, der zur Entwicklung benutzt werden kann.
   </Story>
 </Preview>
 
-# Beispiele
+## Props
 
-<Story name="Different Sizes">
+<Props of={ImagePlaceholder} />
+
+## Beispiele
+
+**JSX:**
+
+```javascript
+<ImagePlaceholder />
+```
+
+**Gerändertes HTML:**
+
+```html
+<img
+  src="https://fakeimg.pl/200x200/f5f5f5/999999/?font=bebas&amp;font_size=24&amp;text=Dummy"
+  srcset="
+    https://fakeimg.pl/200x200/f5f5f5/999999/?font=bebas&amp;font_size=24&amp;text=Dummy              1x,
+    https://fakeimg.pl/200x200/f5f5f5/999999/?font=bebas&amp;font_size=24&amp;text=Dummy&amp;retina=1 2x
+  "
+  alt="Placeholder"
+/>
+```
+
+**Default Image-URL:**
+`https://fakeimg.pl/300x300/f5f5f5/999/?font=bebas&font_size=32&text=Dummy&retina=1`
+
+## How to use
+
+### Größe anpassen
+
+Die Größe oder das Format der Bilder kann mit den Attributen `width` oder `height` individuell angepasst werden. Zusätzlich wird über einen URL-Parameter ein retina-optimiertes Bild generiert, dass die 2-fache Bildgröße beinhaltet.
+**Fallback/Default:** Bildformat `300 x 300 Pixel`
+**URL:** `https://fakeimg.pl/300x300/`
+
+<Story name="Größe anpassen">
   <StyledImageStoryContainer>
     <ImagePlaceholder
       width="200"
@@ -67,12 +101,74 @@ Das Projekt beinhaltet IMG-Placeholder, der zur Entwicklung benutzt werden kann.
   </StyledImageStoryContainer>
 </Story>
 
-# Tool - FakeImageGenerator
+### Text auf Bild anpassen
+
+Mit dem Attribut `text` kann der auf dem generierten Bild ausgegebene Text frei bestimmt werden. Der Default-URL-Parameter wird ersetzt `&?text=Mein neuer Text"`
+
+**Beispiel:** `<ImagePlaceholder text="Mein neuer Text" />`
+
+### Schriftart auf Bild anpassen (font-family)
+
+Mit dem Attribut `font` kann zwischen 3 verschiedenen Schriftarten für den Text auf dem generierten Bild gewählt werden.
+
+| JSX Attribute-Wert | generierter URL-Parameter |
+| ------------------ | ------------------------- |
+| bebas              | font=bebas                |
+| lobster            | font=lobster              |
+| museo              | font=museo                |
+
+### Schriftgröße auf Bild anpassen (font-size)
+
+Mit dem Attribut `fontSize` kann die Schriftgröße für den Text auf dem generierten Bild manuell angepasst werden `<ImagePlaceholder fontSize="12" />`.
+Die Generierte Bild-URL wird dann z.B. um den Parameter `&font_size=12` erweitert bzw. der Default-Wert ersetzt.
+
+### Retina-Mode
+
+Der Retina-Mode ist standardmäßig gesetzt und erweitert die Bild-URL um den Parameter `retina=1`. Dieser verdoppelt die angegebene Bildgröße für Retina Displays.
+
+### Farbe anpassen
+
+Mit den Attributen `colorBg` und `colorText` können die jeweiligen Farben für Bild und Bildtext bearbeitet werden. Der Farbcode muss im HEX-Format **OHNE** Raute (#) angegeben werden, da der Wert als String an einen URL-Parameter weiter gegeben wird.
+
+**Beispiel:** `<ImagePlaceholder colorBg="000" colorText="fff" />`
+
+<Story name="Farbe anpassen">
+  <StyledImageStoryContainer>
+    <ImagePlaceholder
+      colorBg="000"
+      colorText="fff"
+      width="100"
+      height="100"
+      imageText="Bild 1"
+    />
+    <ImagePlaceholder
+      colorBg="1e8f54"
+      colorText="155232"
+      width="100"
+      height="100"
+      imageText="Bild 2"
+    />
+    <ImagePlaceholder
+      colorBg="fbe000"
+      colorText="000"
+      width="100"
+      height="100"
+      imageText="Bild 3"
+    />
+    <ImagePlaceholder
+      colorBg="ff0000"
+      colorText="b50a0a"
+      width="100"
+      height="100"
+      imageText="Bild 4"
+    />
+  </StyledImageStoryContainer>
+</Story>
+
+## Verwendete Tool - FakeImageGenerator
 
 https://fakeimg.pl/  
 https://github.com/Rydgel/Fake-images-please
-
-<Props of={ImagePlaceholder} />
 
 export const StyledImageStoryContainer = styled.div`
   img {

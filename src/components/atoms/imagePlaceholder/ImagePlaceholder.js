@@ -38,7 +38,7 @@ ImagePlaceholder.propTypes = {
   colorBg: PropTypes.string,
   colorText: PropTypes.string,
   imageText: PropTypes.string,
-  font: PropTypes.string,
+  font: PropTypes.oneOf(['bebas', 'lobster', 'museo']),
   fontSize: PropTypes.number,
   alt: PropTypes.string,
 };
