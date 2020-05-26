@@ -13,7 +13,6 @@ const AppHeader = ({ ...props }) => {
       <StyledShopLogo />
       <StyledShopNavigation />
       <StyledMainHeaderNavigation categories={categories} />
-      <div>TEST</div>
     </StyledHeader>
   );
 };
