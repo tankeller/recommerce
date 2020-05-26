@@ -5,7 +5,7 @@ import { Link } from '@reach/router';
 
 import logo from '../../../assets/static/logo.png';
 
-const Logo = ({ pathToLogo, props }) => {
+const Logo = ({ pathToLogo, ...props }) => {
   return (
     <LogoContainer {...props}>
       <Link to="/">

@@ -1,26 +1,47 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
+import React from 'react';
+import styled from '@emotion/styled';
 
+import Logo from '../../atoms/logo/Logo';
+import ShopNavigation from '../shopNavigation/ShopNavigation';
 import MainHeaderNavigation from '../mainHeaderNavigation/MainHeaderNavigation';
-import ShopNavigation from '../shopNavigation/shopNavigation';
 
 import categories from '../../../assets/static/categories.json';
 
 const AppHeader = ({ ...props }) => {
   return (
-    <header
-      css={{
-        display: 'flex',
-        flexDirection: 'column',
-        padding: '0 calc((100vw - 1400px) / 2)',
-        borderBottom: '1px solid #eee',
-      }}
-      {...props}
-    >
-      <ShopNavigation />
-      <MainHeaderNavigation categories={categories} />
-    </header>
+    <StyledHeader {...props}>
+      <StyledShopLogo />
+      <StyledShopNavigation />
+      <StyledMainHeaderNavigation categories={categories} />
+    </StyledHeader>
   );
 };
 
 export default AppHeader;
+
+/**
+ * Styling
+ */
+export const StyledHeader = styled.header`
+  display: block;
+
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+`;
+
+export const StyledShopLogo = styled(Logo)`
+  display: inline-block;
+  height: 50px;
+`;
+
+export const StyledShopNavigation = styled(ShopNavigation)`
+  float: right;
+`;
+
+export const StyledMainHeaderNavigation = styled(MainHeaderNavigation)`
+  float: left;
+  width: auto;
+`;
