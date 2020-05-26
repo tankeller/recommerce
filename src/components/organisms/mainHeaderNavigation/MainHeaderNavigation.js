@@ -11,7 +11,7 @@ import NavLink from '../../atoms/navLink/NavLink';
 import NavToggle from '../../atoms/navToggle/NavToggle';
 import Icon from '../../atoms/icon/Icon';
 
-const MainHeaderNavigation = ({ showHomeLink, categories, ...restProps }) => {
+const MainHeaderNavigation = ({ showHomeLink, categories, ...props }) => {
   const windowSize = useWindowSize();
   const offCanvas = windowSize.width < 1024;
   const [open, setOpen] = useState(false);
@@ -38,7 +38,7 @@ const MainHeaderNavigation = ({ showHomeLink, categories, ...restProps }) => {
    * Component
    */
   return (
-    <MainNav>
+    <MainNav {...props}>
       <Navigation
         open={open}
         setOpen={setOpen}
