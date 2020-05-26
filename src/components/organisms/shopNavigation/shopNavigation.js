@@ -2,7 +2,7 @@ import React from 'react';
 
 import ShopActionsMenu from '../../molecules/shopActionsMenu/ShopActionsMenu';
 
-const ShopNavigation = ({ props }) => {
+const ShopNavigation = ({ ...props }) => {
   return (
     <nav {...props}>
       <ShopActionsMenu />
