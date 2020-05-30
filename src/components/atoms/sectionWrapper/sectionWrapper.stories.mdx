@@ -1,0 +1,76 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { jsx, css } from '@emotion/core';
+import styled from '@emotion/styled';
+import { withKnobs, text, select } from '@storybook/addon-knobs';
+
+import SectionWrapper from './SectionWrapper.js';
+
+<Meta
+  title="Atoms/SectionWrapper"
+  component={SectionWrapper}
+  decorators={[withKnobs]}
+/>
+
+# SectionWrapper
+
+Mit dieser Component kann ein Array direkt als eine Liste ausgegeben werden.
+
+<Preview>
+  <Story name="Default MDX">
+    <StyledDemoSectionWrapper>
+      <StyledDemoBox>Section Wrapper mit Max-Width</StyledDemoBox>
+    </StyledDemoSectionWrapper>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={SectionWrapper} />
+
+## How to use
+
+### Breite
+
+Der SectionContainer wird in der Standardverwendung mit einer `max-width` angezeigt, die in der `theme.js` definiert ist.
+
+#### Max-Width - Default
+
+Die max-width ist für diese Beispielseite auf `60%` reduziert, um den Unterschied zu zeigen.
+
+<Preview>
+  <Story name="Default Wrapper">
+    <StyledDemoSectionWrapper>
+      <StyledDemoBox>Box - Default</StyledDemoBox>
+    </StyledDemoSectionWrapper>
+  </Story>
+</Preview>
+
+#### FullWidth
+
+Der SectionContainer kann mit dem optionalen Attribut `fullWith` auch auf die ganze Bilschirmbreite erweitert werden.
+
+<Preview>
+  <Story name="FullWidth Wrapper">
+    <StyledDemoSectionWrapper fullWidth>
+      <StyledDemoBox>Box - FullWidth</StyledDemoBox>
+    </StyledDemoSectionWrapper>
+  </Story>
+</Preview>
+
+export const StyledDemoBox = styled.div`
+  box-sizing: border-box;
+  width: 100%;
+  background: lightgrey;
+  border: 1px solid lightgrey;
+  background: #f2f2f2;
+  padding: 30px;
+  text-align: center;
+`;
+
+export const StyledDemoSectionWrapper = styled(SectionWrapper)`
+  ${({ fullWidth }) =>
+    !fullWidth &&
+    css`
+      max-width: 60%;
+    `}
+`;

@@ -1,7 +1,8 @@
 import React from 'react';
+import SectionWrapper from '../components/atoms/sectionWrapper/SectionWrapper';
 
 const Article = () => {
-  return <div>This is the Productpage</div>;
+  return <SectionWrapper>This is the Productpage</SectionWrapper>;
 };
 
 export default Article;

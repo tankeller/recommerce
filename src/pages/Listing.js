@@ -2,6 +2,7 @@
 import { jsx } from '@emotion/core';
 
 import PageTemplate from '../components/templates/PageTemplate';
+import SectionWrapper from '../components/atoms/sectionWrapper/SectionWrapper';
 import ArticleList from '../components/organisms/articleList/ArticleList';
 import CategoryHeader from '../components/organisms/categoryHeader/CategoryHeader';
 
@@ -24,12 +25,12 @@ const Listing = ({ categoryID }) => {
   });
 
   return (
-    <div>
+    <SectionWrapper>
       <CategoryHeader categoryName={currentCategory[0].name} />
       <PageTemplate>
         <ArticleList articles={currentArticles} />
       </PageTemplate>
-    </div>
+    </SectionWrapper>
   );
 };
 
