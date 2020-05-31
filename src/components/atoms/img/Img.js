@@ -4,29 +4,31 @@ import { useState } from 'react';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
-import imgFallback from '../../../assets/static/fallback.png';
+import FALLBACK_IMAGE_URL from '../../../assets/static/fallback.png';
 
 const Img = ({ src, srcOnError, width, height, alt, ...props }) => {
-  const [srcImg, setSrcImg] = useState(null);
+  const [srcFallback, setSrcFallback] = useState(null);
 
   const onError = () => {
-    setSrcImg(srcOnError);
+    console.log('01');
+
+    if (srcOnError) {
+      /**
+       * Fallback 1:
+       * The original image can't be loaded and the custom "srcOnError" prop at the <Img> component is used instead.
+       */
+      setSrcFallback(srcOnError);
+    } else {
+      /**
+       * Fallback 2:
+       * INFO: The original image can't be loaded and the custom "srcOnError" prop is not set or can't be loaded too. The broken image is replaced by the last given fallback from the static folder.
+       */
+      setSrcFallback(FALLBACK_IMAGE_URL);
+    }
   };
 
-  /**
-   * Fallback 2:
-   * INFO: The original image can't be loaded and the custom "srcOnError" prop is not set or can't be loaded too. The broken image is replaced by the last given fallback from the static folder.
-   */
-  if (!srcOnError) {
-    src = imgFallback;
-  }
-
-  /**
-   * Fallback 1
-   * The original image can't be loaded and the custom "srcOnError" prop at the <Img> component is used instead.
-   */
-  if (srcImg) {
-    src = srcImg;
+  if (srcFallback) {
+    src = srcFallback;
   }
 
   /**

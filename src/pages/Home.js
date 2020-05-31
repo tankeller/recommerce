@@ -9,7 +9,7 @@ import List from '../components/molecules/list/List';
 import NavListElement from '../components/atoms/navListElement/NavListElement';
 import ImagePlaceholder from '../components/atoms/imgPlaceholder/ImgPlaceholder';
 import Img from '../components/atoms/img/Img';
-import DEFAULT_IMAGE_URL from '../assets/static/logo.png';
+import FALLBACK_IMAGE_URL from '../assets/static/logo.png';
 
 import Days from '../assets/static/dummy/demoList.json';
 
@@ -36,7 +36,7 @@ const Home = ({ props }) => {
       <ImagePlaceholder width={200} height={200} />
       <Img
         src="https://fakeimg.pl/250x250/f5f5f5/999/?font=bebas&font_size=32&text=Coffee"
-        srcOnError={DEFAULT_IMAGE_URL}
+        srcOnError={FALLBACK_IMAGE_URL}
       />
     </SectionWrapper>
   );

@@ -1,31 +1,20 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
+import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
 import Img from '../../atoms/img/Img';
-import imgFallback from '../../../assets/static/fallback.png';
 
 import ArticleData from '../../molecules/articleData/ArticleData';
 
 const ArticleBox = ({ article, ...restProps }) => {
   return (
-    <div
-      css={{
-        textAlign: 'center',
-      }}
-      {...restProps}
-    >
-      <a
-        css={{
-          textDecoration: 'none',
-        }}
-        href={`/${article.name}`}
-      >
-        <Img src={article.img} srcOnError={imgFallback} alt={article.name} />
-
+    <StyledArticleBox {...restProps}>
+      <StyledArticleBoxLink href={`/${article.name}`}>
+        <Img src={article.img} alt={article.name} />
         <ArticleData article={article} />
-      </a>
-    </div>
+      </StyledArticleBoxLink>
+    </StyledArticleBox>
   );
 };
 
@@ -39,3 +28,11 @@ ArticleBox.propTypes = {
 };
 
 export default ArticleBox;
+
+export const StyledArticleBox = styled.div`
+  text-align: center;
+`;
+
+export const StyledArticleBoxLink = styled.a`
+  text-decoration: none;
+`;
