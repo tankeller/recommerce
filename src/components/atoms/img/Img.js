@@ -9,9 +9,7 @@ import FALLBACK_IMAGE_URL from '../../../assets/static/fallback.png';
 const Img = ({ src, srcOnError, width, height, alt, ...props }) => {
   const [srcFallback, setSrcFallback] = useState(null);
 
-  const onError = () => {
-    console.log('01');
-
+  const onError = (event) => {
     if (srcOnError) {
       /**
        * Fallback 1:
