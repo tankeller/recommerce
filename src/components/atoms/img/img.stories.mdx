@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 
 import Img from './Img.js';
 
-import DemoImage from '../../../assets/static/logo.png';
+import DemoImage from '../../../assets/static/dummy/demo_image.jpeg';
 import DemoImageFallback from '../../../assets/static/fallback.png';
 
 <Meta title="Atoms/Img" component={Img} decorators={[withKnobs]} />
@@ -19,7 +19,7 @@ Image Komponente, mit Fallback-Image, wenn das Original-Bild nicht geladen werde
       src={DemoImage}
       srcOnError={DemoImageFallback}
       width={text('Width', 300)}
-      height={text('Height', 300)}
+      height={text('Height', 200)}
       alt={text('Alt-text', 'Image description')}
     />
   </Story>
@@ -51,11 +51,11 @@ Die Größe oder das Format der Bilder kann optional mit den Attributen `width` 
 
 <Story name="Größe anpassen">
   <StyledImgStoryContainer>
-    <Img src={DemoImage} width={200} height={200} />
-    <Img src={DemoImage} width={150} height={150} />
-    <Img src={DemoImage} width={100} height={100} />
-    <Img src={DemoImage} width={80} height={80} />
-    <Img src={DemoImage} width={60} height={60} />
+    <Img src={DemoImage} width={200} />
+    <Img src={DemoImage} width={150} />
+    <Img src={DemoImage} width={100} />
+    <Img src={DemoImage} width={80} />
+    <Img src={DemoImage} width={60} />
   </StyledImgStoryContainer>
 </Story>
 
@@ -65,13 +65,8 @@ Zusätzlich zum `src` kann ein optional ein weiteres Attribut `srcOnError` für 
 
 <Story name="Fallback">
   <StyledImgStoryContainer>
-    <Img
-      src={DemoImage}
-      srcOnError={DemoImageFallback}
-      width={200}
-      height={200}
-    />
-    <Img src={DemoImage} width={150} height={150} />
+    <Img src={DemoImage} srcOnError={DemoImageFallback} width={200} />
+    <Img src={DemoImage} width={150} />
   </StyledImgStoryContainer>
 </Story>
 
@@ -80,5 +75,3 @@ export const StyledImgStoryContainer = styled.div`
     margin: 0 15px 15px 0;
   }
 `;
-
-;

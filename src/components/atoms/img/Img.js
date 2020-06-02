@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 import FALLBACK_IMAGE_URL from '../../../assets/static/fallback.png';
 
-const Img = ({ src, srcOnError, width, height, alt, ...props }) => {
+const Img = ({ src, srcOnError, srcRetina, width, height, alt, ...props }) => {
   const [srcFallback, setSrcFallback] = useState(null);
 
   const onError = (event) => {
@@ -29,12 +29,17 @@ const Img = ({ src, srcOnError, width, height, alt, ...props }) => {
     src = srcFallback;
   }
 
+  const srcSet = srcRetina ? `${src} 1x, ${srcRetina} 2x` : '';
+
+  console.log(srcSet);
+
   /**
    * Original image
    */
   return (
     <img
       src={src}
+      srcSet={srcSet}
       onError={onError}
       alt={alt}
       width={width}
@@ -46,6 +51,7 @@ const Img = ({ src, srcOnError, width, height, alt, ...props }) => {
 
 Img.propTypes = {
   src: PropTypes.string.isRequired,
+  srcRetina: PropTypes.string,
   srcOnError: PropTypes.string,
   width: PropTypes.number,
   height: PropTypes.number,

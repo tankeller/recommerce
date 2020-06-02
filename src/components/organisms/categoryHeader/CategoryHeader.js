@@ -1,23 +1,15 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
+import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
 import CategoryHeadline from '../../atoms/categoryHeadline/CategoryHeadline';
 
 const CategoryHeader = ({ categoryName, ...props }) => {
   return (
-    <div
-      css={{
-        display: 'block',
-        backgroundColor: '#eee',
-        height: '150px',
-        marginBottom: '10px',
-        padding: '1.5rem calc((100vw - 1400px) / 2)',
-      }}
-      {...props}
-    >
+    <StyledCategoryHeader {...props}>
       <CategoryHeadline>{categoryName}</CategoryHeadline>
-    </div>
+    </StyledCategoryHeader>
   );
 };
 
@@ -26,3 +18,12 @@ CategoryHeader.propTypes = {
 };
 
 export default CategoryHeader;
+
+/**
+ * Styling
+ */
+export const StyledCategoryHeader = styled.div`
+  display: block;
+  margin-bottom: 10px;
+  padding: 20px 0;
+`;

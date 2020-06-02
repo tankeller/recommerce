@@ -28,11 +28,13 @@ export default AppHeader;
  */
 export const StyledHeader = styled.header`
   display: flex;
+  border-bottom: 1px solid ${theme.colors.borderColor};
 `;
 
 export const StyledShopLogo = styled(Logo)`
   display: inline-block;
   height: 50px;
+  padding: 5px 0;
 
   @media ${theme.screen.mobile}, ${theme.screen.tabletPortrait} {
     margin-bottom: -10px; /* HACK: Fix inline-block spacing */
@@ -46,9 +48,21 @@ export const StyledShopLogo = styled(Logo)`
 
 export const StyledShopNavigation = styled(ShopNavigation)`
   float: right;
+
+  button {
+    @media ${theme.screen.mobile}, ${theme.screen.tabletPortrait} {
+      width: auto;
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
 `;
 
 export const StyledMainHeaderNavigation = styled(MainHeaderNavigation)`
   float: left;
   width: auto;
+
+  @media ${theme.screen.mobile}, ${theme.screen.tabletPortrait} {
+    margin-left: -10px;
+  }
 `;

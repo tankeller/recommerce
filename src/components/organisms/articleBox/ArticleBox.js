@@ -7,9 +7,9 @@ import Img from '../../atoms/img/Img';
 
 import ArticleData from '../../molecules/articleData/ArticleData';
 
-const ArticleBox = ({ article, ...restProps }) => {
+const ArticleBox = ({ article, ...props }) => {
   return (
-    <StyledArticleBox {...restProps}>
+    <StyledArticleBox {...props}>
       <StyledArticleBoxLink href={`/${article.name}`}>
         <Img src={article.img} alt={article.name} />
         <ArticleData article={article} />
@@ -31,6 +31,10 @@ export default ArticleBox;
 
 export const StyledArticleBox = styled.div`
   text-align: center;
+
+  img {
+    margin: 0 auto;
+  }
 `;
 
 export const StyledArticleBoxLink = styled.a`

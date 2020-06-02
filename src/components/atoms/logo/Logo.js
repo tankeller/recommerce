@@ -3,13 +3,15 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { Link } from '@reach/router';
 
+import Img from '../img/Img';
 import logo from '../../../assets/static/logo.png';
+import logoRetina from '../../../assets/static/logo@2x.png';
 
 const Logo = ({ pathToLogo, ...props }) => {
   return (
     <LogoContainer {...props}>
       <Link to="/">
-        <img src={pathToLogo} alt="Logo" />
+        <Img src={pathToLogo} srcRetina={logoRetina} alt="Logo" />
       </Link>
     </LogoContainer>
   );

@@ -5,6 +5,7 @@ const theme = {
     secondaryColor: 'red',
     textColor: '#828282',
     textColorLight: '#9b9c9d',
+    borderColor: '#efefef',
   },
   font: {
     sizes: {

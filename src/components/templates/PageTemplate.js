@@ -1,20 +1,17 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
+import styled from '@emotion/styled';
 
 const PageTemplate = ({ children, ...props }) => {
-  return (
-    <main
-      css={{
-        display: 'block',
-        margin: '2rem auto 2rem',
-        maxWidth: '90vw',
-        width: '1200px',
-      }}
-      {...props}
-    >
-      {children}
-    </main>
-  );
+  return <StyledMain {...props}>{children}</StyledMain>;
 };
 
 export default PageTemplate;
+
+/**
+ * Styling
+ */
+export const StyledMain = styled.main`
+  display: block;
+  margin-bottom: 30px;
+`;
