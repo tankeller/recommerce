@@ -5,11 +5,12 @@ import styled from '@emotion/styled';
 import Img from './Img.js';
 
 import DemoImage from '../../../assets/static/dummy/demo_image.jpeg';
+import DemoImageRetina from '../../../assets/static/dummy/demo_image@2x.jpeg';
 import DemoImageFallback from '../../../assets/static/fallback.png';
 
 <Meta title="Atoms/Img" component={Img} decorators={[withKnobs]} />
 
-# Image
+# Img
 
 Image Komponente, mit Fallback-Image, wenn das Original-Bild nicht geladen werden kann.
 
@@ -17,6 +18,7 @@ Image Komponente, mit Fallback-Image, wenn das Original-Bild nicht geladen werde
   <Story name="Default MDX">
     <Img
       src={DemoImage}
+      srcRetina={DemoImageRetina}
       srcOnError={DemoImageFallback}
       width={text('Width', 300)}
       height={text('Height', 200)}
@@ -36,6 +38,7 @@ Image Komponente, mit Fallback-Image, wenn das Original-Bild nicht geladen werde
 ```javascript
 <Img
   src="path/to/image.jpg"
+  srcRetina="path/to/image@2x.jpg"
   srcOnError="path/to/image_FALLBACK.jpg"
   alt="Image description"
   width={200}
@@ -56,6 +59,23 @@ Die Größe oder das Format der Bilder kann optional mit den Attributen `width` 
     <Img src={DemoImage} width={100} />
     <Img src={DemoImage} width={80} />
     <Img src={DemoImage} width={60} />
+  </StyledImgStoryContainer>
+</Story>
+
+### Retina
+
+Um für Retina-Displays ein alternatives Bild mit höherer Auflösung/Pixelanzahl zu laden, kann optional über das Attribute `srcRetina` ein alternatives Bild festgelegt werden.
+Im Normalfall ist die hierfür bevorzugte Namenskonvention ein zusaätzliches `@2x` am Ende des Dateinamens.
+
+```
+path/to/image.jpg
+path/to/image@2x.jpg
+```
+
+<Story name="Retina Auflösung">
+  <StyledImgStoryContainer>
+    <Img src={DemoImage} width={200} />
+    <Img src={DemoImage} srcRetina={DemoImageRetina} width={200} />
   </StyledImgStoryContainer>
 </Story>
 
