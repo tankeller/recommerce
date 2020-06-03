@@ -31,8 +31,6 @@ const Img = ({ src, srcOnError, srcRetina, width, height, alt, ...props }) => {
 
   const srcSet = srcRetina ? `${src} 1x, ${srcRetina} 2x` : '';
 
-  console.log(srcSet);
-
   /**
    * Original image
    */
