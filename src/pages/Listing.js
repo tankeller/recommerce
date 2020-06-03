@@ -24,11 +24,16 @@ const Listing = ({ categoryID }) => {
     return category.id === parseInt(categoryID);
   });
 
+  // BoxLayout Fallback
+  const boxLayout = !currentCategory[0].layout
+    ? 'basic'
+    : currentCategory[0].layout;
+
   return (
     <SectionWrapper>
       <CategoryHeader categoryName={currentCategory[0].name} />
       <PageTemplate>
-        <ArticleList articles={currentArticles} />
+        <ArticleList articles={currentArticles} boxLayout={boxLayout} />
       </PageTemplate>
     </SectionWrapper>
   );

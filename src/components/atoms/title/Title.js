@@ -1,24 +1,15 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
+import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
+import Theme from '../../../assets/theme';
 
 const Title = ({ truncateAfter, children, ...props }) => {
   if (children.length >= truncateAfter) {
     children = children.substring(0, truncateAfter) + '...';
   }
 
-  return (
-    <p
-      css={{
-        fontSize: '1rem',
-        color: '#4f4f4f',
-        fontFamily: 'Arial, Helvetica, sans-serif',
-      }}
-      {...props}
-    >
-      {children}
-    </p>
-  );
+  return <StyledTitle {...props}>{children}</StyledTitle>;
 };
 
 Title.defaultProps = {
@@ -33,3 +24,11 @@ Title.propTypes = {
 };
 
 export default Title;
+
+/**
+ * Styling
+ */
+export const StyledTitle = styled.p`
+  font-size: 1rem;
+  color: ${Theme.colors.textColor};
+`;

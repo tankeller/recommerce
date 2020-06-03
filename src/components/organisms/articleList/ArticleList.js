@@ -1,19 +1,29 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
+import { jsx, css } from '@emotion/core';
 import styled from '@emotion/styled';
 import theme from '../../../assets/theme';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import ArticleBox from '../articleBox/ArticleBox';
 
-const ArticleList = ({ articles, ...props }) => {
+const ArticleList = ({ articles, boxLayout, ...props }) => {
   return (
-    <StyledArticleList {...props}>
+    <StyledArticleList boxLayout={boxLayout} {...props}>
       {articles.map((article) => {
-        return <StyledArticleBox key={article.id} article={article} />;
+        return (
+          <StyledArticleBox
+            key={article.id}
+            article={article}
+            boxLayout={boxLayout}
+          />
+        );
       })}
     </StyledArticleList>
   );
+};
+
+ArticleList.propTypes = {
+  boxLayout: PropTypes.oneOf(['basic', 'list', 'image']),
 };
 
 export default ArticleList;
@@ -30,22 +40,57 @@ export const StyledArticleList = styled.div`
 `;
 
 export const StyledArticleBox = styled(ArticleBox)`
-  flex-basis: 25%;
-  max-width: 25%;
-  padding: 0 5px;
+  ${(props) =>
+    props.boxLayout === 'basic' &&
+    css`
+      flex-basis: 25%;
+      max-width: 25%;
+      padding: 0 5px;
 
-  @media ${theme.screen.mobilePortrait} {
-    flex-basis: 100%;
-    max-width: 100%;
-  }
+      @media ${theme.screen.mobilePortrait} {
+        flex-basis: 100%;
+        max-width: 100%;
+      }
 
-  @media ${theme.screen.mobileLandscape} {
-    flex-basis: 50%;
-    max-width: 50%;
-  }
+      @media ${theme.screen.mobileLandscape} {
+        flex-basis: 50%;
+        max-width: 50%;
+      }
 
-  @media ${theme.screen.tabletPortrait} {
-    flex-basis: 33.33%;
-    max-width: 33.33%;
-  }
+      @media ${theme.screen.tabletPortrait} {
+        flex-basis: 33.33%;
+        max-width: 33.33%;
+      }
+    `}
+
+  ${(props) =>
+    props.boxLayout === 'list' &&
+    css`
+      flex-basis: 100%;
+      max-width: 100%;
+    `}
+
+  ${(props) =>
+    props.boxLayout === 'image' &&
+    css`
+      flex-basis: 25%;
+      max-width: 25%;
+      padding: 0 5px;
+
+      @media ${theme.screen.mobilePortrait} {
+        flex-basis: 100%;
+        max-width: 100%;
+      }
+
+      @media ${theme.screen.mobileLandscape} {
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+
+      @media ${theme.screen.tabletPortrait} {
+        flex-basis: 33.33%;
+        max-width: 33.33%;
+      }
+    `}
+
 `;
