@@ -21,6 +21,24 @@ const theme = {
       '0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px - 18px rgba(0, 0, 0, 0.3), 0 -12px 36px - 8px rgba(0, 0, 0, 0.025)',
   },
   pageMaxWidth: '1260px',
+  breakpoint: {
+    px: {
+      xs: '320px',
+      x: '480px',
+      m: '768px',
+      l: '1025px',
+      xl: '1260px',
+      xxl: '1600px',
+    },
+    num: {
+      xs: 320,
+      x: 480,
+      m: 768,
+      l: 1025,
+      xl: 1260,
+      xxl: 1600,
+    },
+  },
   screen: {
     mobile: 'screen and (max-device-width : 767px)',
     mobilePortrait: 'only screen and (max-width : 480px)',

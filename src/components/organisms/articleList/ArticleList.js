@@ -43,8 +43,8 @@ export const StyledArticleBox = styled(ArticleBox)`
   ${(props) =>
     props.boxLayout === 'basic' &&
     css`
-      flex-basis: 25%;
-      max-width: 25%;
+      flex-basis: 20%;
+      max-width: 20%;
       padding: 0 5px;
 
       @media ${theme.screen.mobilePortrait} {
@@ -60,6 +60,11 @@ export const StyledArticleBox = styled(ArticleBox)`
       @media ${theme.screen.tabletPortrait} {
         flex-basis: 33.33%;
         max-width: 33.33%;
+      }
+
+      @media ${theme.screen.tabletLandscape} {
+        flex-basis: 25%;
+        max-width: 25%;
       }
     `}
 

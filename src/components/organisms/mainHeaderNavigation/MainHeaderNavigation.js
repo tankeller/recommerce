@@ -3,6 +3,7 @@ import { jsx, css } from '@emotion/core';
 import styled from '@emotion/styled';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useTheme } from 'emotion-theming';
 import useWindowSize from '../../../assets/hooks/useWindowSize';
 
 import Navigation from '../../molecules/navigation/Navigation';
@@ -12,8 +13,9 @@ import NavToggle from '../../atoms/navToggle/NavToggle';
 import Icon from '../../atoms/icon/Icon';
 
 const MainHeaderNavigation = ({ showHomeLink, categories, ...props }) => {
+  const theme = useTheme();
   const windowSize = useWindowSize();
-  const offCanvas = windowSize.width < 1024;
+  const offCanvas = windowSize.width < theme.breakpoint.num.l;
   const [open, setOpen] = useState(false);
   const isHidden = !offCanvas || open ? true : false;
   const tabIndex = isHidden ? 0 : -1;
@@ -76,7 +78,7 @@ const MainHeaderNavigation = ({ showHomeLink, categories, ...props }) => {
 };
 
 MainHeaderNavigation.defaultProps = {
-  showHomeLink: true,
+  showHomeLink: false,
   categories: [],
 };
 
