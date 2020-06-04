@@ -2,14 +2,17 @@
 import { jsx, css } from '@emotion/core';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
-import theme from '../../../assets/theme';
+import { useTheme } from 'emotion-theming';
 
 const Navigation = ({ open, setOpen, offCanvas, children, ...props }) => {
+  const theme = useTheme();
+
   return (
     <StyledNavigation
       offCanvas={offCanvas}
       open={open}
       setOpen={setOpen}
+      theme={theme}
       {...props}
     >
       {children}
@@ -37,8 +40,8 @@ export const StyledNavigation = styled.ul`
   min-height: 50px;
   align-items: center;
 
-  ${(props) =>
-    props.offCanvas &&
+  ${({ offCanvas, theme }) =>
+    offCanvas &&
     css`
       background: #fff;
       display: block;
@@ -58,8 +61,8 @@ export const StyledNavigation = styled.ul`
       }
     `}
 
-  ${(props) =>
-    props.open &&
+  ${({ open }) =>
+    open &&
     css`
       transform: translateX(0);
     `}

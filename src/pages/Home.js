@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
-import theme from '../assets/theme';
+import { useTheme } from 'emotion-theming';
 
 import SectionWrapper from '../components/atoms/sectionWrapper/SectionWrapper';
 import Ul from '../components/atoms/ul/Ul';
@@ -14,8 +14,9 @@ import FALLBACK_IMAGE_URL from '../assets/static/logo.png';
 import Days from '../assets/static/dummy/demoList.json';
 
 const Home = ({ props }) => {
+  const theme = useTheme();
   return (
-    <SectionWrapper>
+    <SectionWrapper theme={theme}>
       <h3>Liste - vertical (default)</h3>
       <Ul>
         <NavListElement>test 1</NavListElement>
@@ -48,6 +49,6 @@ export default Home;
  * Styling
  */
 export const StyledHeading = styled.h3`
-  color: ${theme.colors.primaryColor};
+  color: ${({ theme }) => `${theme.colors.primaryColor}`};
   margin-bottom: 10px;
 `;

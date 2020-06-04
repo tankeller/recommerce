@@ -2,8 +2,7 @@
 import { jsx, css } from '@emotion/core';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
-
-import theme from '../../../assets/theme';
+import { useTheme } from 'emotion-theming';
 
 const SectionWrapper = ({
   fullWidth,
@@ -12,11 +11,14 @@ const SectionWrapper = ({
   children,
   ...props
 }) => {
+  const theme = useTheme();
+
   return (
     <StyledSectionWrapper
       fullWidth={fullWidth}
       paddingX={paddingX}
       paddingY={paddingY}
+      theme={theme}
       {...props}
     >
       {children}
@@ -44,8 +46,9 @@ export default SectionWrapper;
 export const StyledSectionWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
-  padding: ${(props) => `${props.paddingY}px ${props.paddingX}px`};
-  ${({ fullWidth }) =>
+  padding: ${({ paddingX, paddingY }) => `${paddingY}px ${paddingX}px`};
+
+  ${({ fullWidth, theme }) =>
     !fullWidth &&
     css`
       max-width: ${theme.pageMaxWidth};

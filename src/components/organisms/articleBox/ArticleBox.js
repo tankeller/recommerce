@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 import styled from '@emotion/styled';
-import theme from '../../../assets/theme';
+import { useTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
 import Img from '../../atoms/img/Img';
@@ -9,8 +9,10 @@ import Img from '../../atoms/img/Img';
 import ArticleData from '../../molecules/articleData/ArticleData';
 
 const ArticleBox = ({ article, boxLayout, ...props }) => {
+  const theme = useTheme();
+
   return (
-    <StyledArticleBox boxLayout={boxLayout} {...props}>
+    <StyledArticleBox theme={theme} boxLayout={boxLayout} {...props}>
       <StyledArticleBoxLink href={`/${article.name}`} boxLayout={boxLayout}>
         <ImageWrapper boxLayout={boxLayout}>
           <Img src={article.img} alt={article.name} />
@@ -39,14 +41,14 @@ export default ArticleBox;
 export const StyledArticleBox = styled.div`
   margin-bottom: 10px;
 
-  ${(props) =>
-    props.boxLayout === 'basic' &&
+  ${({ boxLayout }) =>
+    boxLayout === 'basic' &&
     css`
       text-align: center;
     `}
 
-  ${(props) =>
-    props.boxLayout === 'image' &&
+  ${({ boxLayout }) =>
+    boxLayout === 'image' &&
     css`
       position: relative;
     `}
@@ -57,18 +59,22 @@ export const StyledArticleBoxLink = styled.a`
   text-decoration: none;
   color: inherit;
 
-  ${(props) =>
-    props.boxLayout === 'list' &&
+  ${({ theme, boxLayout }) =>
+    boxLayout === 'list' &&
     css`
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+
+      @media ${theme.screen.mobilePortrait} {
+        flex-direction: column;
+      }
     `}
 `;
 
 export const ImageWrapper = styled.div`
-  ${(props) =>
-    props.boxLayout === 'list' &&
+  ${({ theme, boxLayout }) =>
+    boxLayout === 'list' &&
     css`
       @media ${theme.screen.mobileLandscapeUp} {
         width: 30%;
@@ -81,8 +87,8 @@ export const ImageWrapper = styled.div`
 `;
 
 export const StyledArticleData = styled(ArticleData)`
-  ${(props) =>
-    props.boxLayout === 'image' &&
+  ${({ theme, boxLayout }) =>
+    boxLayout === 'image' &&
     css`
       position: absolute;
       top: 0;
@@ -105,8 +111,8 @@ export const StyledArticleData = styled(ArticleData)`
       }
     `}
 
-  ${(props) =>
-    props.boxLayout === 'list' &&
+  ${({ theme, boxLayout }) =>
+    boxLayout === 'list' &&
     css`
       @media ${theme.screen.mobileLandscapeUp} {
         width: 70%;

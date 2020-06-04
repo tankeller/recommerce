@@ -1,6 +1,7 @@
-import React from 'react';
+/** @jsx jsx */
+import { jsx, css } from '@emotion/core';
 import styled from '@emotion/styled';
-import theme from '../../../assets/theme';
+import { useTheme } from 'emotion-theming';
 
 import SectionWrapper from '../../atoms/sectionWrapper/SectionWrapper';
 import Logo from '../../atoms/logo/Logo';
@@ -10,8 +11,10 @@ import MainHeaderNavigation from '../mainHeaderNavigation/MainHeaderNavigation';
 import categories from '../../../assets/static/categories.json';
 
 const AppHeader = ({ ...props }) => {
+  const theme = useTheme();
+
   return (
-    <StyledHeader {...props}>
+    <StyledHeader theme={theme} {...props}>
       <SectionWrapper>
         <StyledShopLogo />
         <StyledShopNavigation />
@@ -28,7 +31,7 @@ export default AppHeader;
  */
 export const StyledHeader = styled.header`
   display: flex;
-  border-bottom: 1px solid ${theme.colors.borderColor};
+  border-bottom: 1px solid ${({ theme }) => `${theme.colors.borderColor}`};
 `;
 
 export const StyledShopLogo = styled(Logo)`
@@ -36,25 +39,29 @@ export const StyledShopLogo = styled(Logo)`
   height: 50px;
   padding: 5px 0;
 
-  @media ${theme.screen.mobile}, ${theme.screen.tabletPortrait} {
-    margin-bottom: -10px; /* HACK: Fix inline-block spacing */
-  }
+  ${({ theme }) => css`
+    @media ${theme.screen.mobile}, ${theme.screen.tabletPortrait} {
+      margin-bottom: -10px; /* HACK: Fix inline-block spacing */
+    }
 
-  @media ${theme.screen.tabletLandscape}, ${theme.screen.desktop} {
-    float: left;
-    margin-right: 10px;
-  }
+    @media ${theme.screen.tabletLandscape}, ${theme.screen.desktop} {
+      float: left;
+      margin-right: 10px;
+    }
+  `}
 `;
 
 export const StyledShopNavigation = styled(ShopNavigation)`
   float: right;
 
   button {
-    @media ${theme.screen.mobile}, ${theme.screen.tabletPortrait} {
-      width: auto;
-      padding-left: 12px;
-      padding-right: 12px;
-    }
+    ${({ theme }) => css`
+      @media ${theme.screen.mobile}, ${theme.screen.tabletPortrait} {
+        width: auto;
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+    `}
   }
 `;
 
@@ -62,7 +69,9 @@ export const StyledMainHeaderNavigation = styled(MainHeaderNavigation)`
   float: left;
   width: auto;
 
-  @media ${theme.screen.mobile}, ${theme.screen.tabletPortrait} {
-    margin-left: -10px;
-  }
+  ${({ theme }) => css`
+    @media ${theme.screen.mobile}, ${theme.screen.tabletPortrait} {
+      margin-left: -10px;
+    }
+  `}
 `;

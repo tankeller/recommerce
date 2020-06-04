@@ -1,16 +1,18 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
+import { jsx, css } from '@emotion/core';
 import styled from '@emotion/styled';
-import theme from '../../../assets/theme';
+import { useTheme } from 'emotion-theming';
 
 import SectionWrapper from '../../atoms/sectionWrapper/SectionWrapper';
 import Ul from '../..//atoms/ul/Ul';
 import NavListElement from '../../atoms/navListElement/NavListElement';
 
 const AppFooter = ({ ...props }) => {
+  const theme = useTheme();
+
   return (
     <Footer {...props}>
-      <FooterMainInner>
+      <FooterMainInner theme={theme}>
         <Row>
           <div className="widget-block">
             <div className="widget-block-title">Column 1</div>
@@ -76,7 +78,7 @@ export const FooterMainInner = styled(SectionWrapper)`
   display: block;
   width: 100%;
   padding: 30px 0 0;
-  font-size: ${theme.font.sizes.medium};
+  font-size: ${({ theme }) => `${theme.font.sizes.medium}`};
 `;
 
 export const Row = styled.div`
@@ -92,23 +94,27 @@ export const Row = styled.div`
     width: 100%;
     padding: 0 30px;
     margin-bottom: 30px;
-    color: ${theme.colors.textColorLight};
 
-    @media ${theme.screen.tablet}, ${theme.screen.desktop} {
-      float: left;
-    }
+    ${({ theme }) =>
+      css`
+        color: ${theme.colors.textColorLight};
 
-    @media ${theme.screen.tablet} {
-      width: 50%;
-    }
+        @media ${theme.screen.tablet}, ${theme.screen.desktop} {
+          float: left;
+        }
 
-    @media ${theme.screen.desktop} {
-      width: 25%;
-    }
+        @media ${theme.screen.tablet} {
+          width: 50%;
+        }
+
+        @media ${theme.screen.desktop} {
+          width: 25%;
+        }
+      `}
   }
 
   .widget-block-title {
-    font-size: ${theme.font.sizes.large};
+    font-size: ${({ theme }) => `${theme.font.sizes.large}`};
   }
 
   .widget-block-body {
@@ -125,6 +131,10 @@ export const FooterCopy = styled.div`
 export const FooterCopyInner = styled(SectionWrapper)`
   padding: 10px 15px;
   text-align: center;
-  color: ${theme.colors.textColorLight};
-  font-size: ${theme.font.sizes.small};
+
+  ${({ theme }) =>
+    css`
+      color: ${theme.colors.textColorLight};
+      font-size: ${theme.font.sizes.small};
+    `}
 `;

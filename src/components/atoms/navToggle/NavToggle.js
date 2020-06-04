@@ -2,10 +2,10 @@
 import { jsx, css } from '@emotion/core';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
-
-import theme from '../../../assets/theme';
+import { useTheme } from 'emotion-theming';
 
 const NavToggle = ({ open, setOpen, ...props }) => {
+  const theme = useTheme();
   const isExpanded = open ? true : false;
 
   return (
@@ -14,6 +14,7 @@ const NavToggle = ({ open, setOpen, ...props }) => {
       aria-expanded={isExpanded}
       open={open}
       onClick={() => setOpen(!open)}
+      theme={theme}
       {...props}
     >
       <span />
@@ -47,8 +48,8 @@ export const Burger = styled.button`
   left: 0;
   transition: all 0.3s ease-in-out;
 
-  ${(props) =>
-    props.open &&
+  ${({ open, theme }) =>
+    open &&
     css`
       position: fixed;
       top: 0;
@@ -69,7 +70,7 @@ export const Burger = styled.button`
     height: 2px;
     width: 100%;
     margin-top: 4px;
-    background-color: ${theme.colors.textColor};
+    background-color: ${({ theme }) => `${theme.colors.textColor}`};
     border-radius: 1px;
     transition: all 0.2s ease-in-out 0.3s;
 

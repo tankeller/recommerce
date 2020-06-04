@@ -1,18 +1,21 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 import styled from '@emotion/styled';
-import theme from '../../../assets/theme';
+import { useTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
 import ArticleBox from '../articleBox/ArticleBox';
 
 const ArticleList = ({ articles, boxLayout, ...props }) => {
+  const theme = useTheme();
+
   return (
     <StyledArticleList boxLayout={boxLayout} {...props}>
       {articles.map((article) => {
         return (
           <StyledArticleBox
             key={article.id}
+            theme={theme}
             article={article}
             boxLayout={boxLayout}
           />
@@ -40,8 +43,8 @@ export const StyledArticleList = styled.div`
 `;
 
 export const StyledArticleBox = styled(ArticleBox)`
-  ${(props) =>
-    props.boxLayout === 'basic' &&
+  ${({ theme, boxLayout }) =>
+    boxLayout === 'basic' &&
     css`
       flex-basis: 20%;
       max-width: 20%;
@@ -68,15 +71,15 @@ export const StyledArticleBox = styled(ArticleBox)`
       }
     `}
 
-  ${(props) =>
-    props.boxLayout === 'list' &&
+  ${({ boxLayout }) =>
+    boxLayout === 'list' &&
     css`
       flex-basis: 100%;
       max-width: 100%;
     `}
 
-  ${(props) =>
-    props.boxLayout === 'image' &&
+  ${({ theme, boxLayout }) =>
+    boxLayout === 'image' &&
     css`
       flex-basis: 25%;
       max-width: 25%;
