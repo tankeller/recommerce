@@ -1,0 +1,8 @@
+/*----------------------------------
+    STORYBOOK: GLOBAL STYLES
+-----------------------------------*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
