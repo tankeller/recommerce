@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Title from '../../atoms/title/Title';
 import PriceContainer from '../../molecules/priceContainer/PriceContainer';
 
-const ArticleData = ({ article, boxLayout, ...props }) => {
+const ArticleData = ({ article, ...props }) => {
   return (
     <StyledArticleData {...props}>
       <Title>{article.name}</Title>
@@ -21,7 +21,6 @@ ArticleData.defaultProps = {
 
 ArticleData.propTypes = {
   article: PropTypes.object.isRequired,
-  boxLayout: PropTypes.oneOf(['basic', 'list', 'image']),
   className: PropTypes.string,
 };
 

@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
+import { createContext, useContext } from 'react';
 
 import PageTemplate from '../components/templates/PageTemplate';
 import SectionWrapper from '../components/atoms/sectionWrapper/SectionWrapper';
@@ -9,7 +10,19 @@ import CategoryHeader from '../components/organisms/categoryHeader/CategoryHeade
 import articles from '../assets/static/articles.json';
 import categories from '../assets/static/categories.json';
 
+// Default ListingContext
+export let ListingContext = createContext({
+  boxLayout: '',
+  category: {
+    name: '',
+    id: '',
+    articles: [],
+  },
+});
+
 const Listing = ({ categoryID }) => {
+  const context = useContext(ListingContext);
+
   // Articles by categoryID
   const categoryArticles = articles.filter((article) => {
     return article.categoryID === parseInt(categoryID);
@@ -24,17 +37,24 @@ const Listing = ({ categoryID }) => {
     return category.id === parseInt(categoryID);
   });
 
-  // BoxLayout Fallback
-  const boxLayout = !currentCategory[0].layout
+  // BoxLayout incl. fallback
+  context.boxLayout = !currentCategory[0].layout
     ? 'basic'
     : currentCategory[0].layout;
 
+  // Update ListingContext
+  context.category.name = currentCategory[0].name;
+  context.category.id = currentCategory[0].id;
+  context.category.articles = categoryArticles;
+
   return (
     <SectionWrapper>
-      <CategoryHeader categoryName={currentCategory[0].name} />
-      <PageTemplate>
-        <ArticleList articles={currentArticles} boxLayout={boxLayout} />
-      </PageTemplate>
+      <ListingContext.Provider value={context}>
+        <CategoryHeader categoryName={currentCategory[0].name} />
+        <PageTemplate>
+          <ArticleList articles={currentArticles} />
+        </PageTemplate>
+      </ListingContext.Provider>
     </SectionWrapper>
   );
 };
