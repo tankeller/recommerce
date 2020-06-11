@@ -24,7 +24,6 @@ const StyledArticleList = styled((props) => (
     flex-basis: 25%;
     max-width: 25%;
     padding: 0 5px;
-    box-sizing: border-box;
 
     img {
       max-width: 100%;
