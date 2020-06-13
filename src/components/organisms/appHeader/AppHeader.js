@@ -2,16 +2,35 @@
 import { jsx, css } from '@emotion/core';
 import styled from '@emotion/styled';
 import { useTheme } from 'emotion-theming';
+import useDataFetching from '../../../assets/hooks/useDataFetching';
 
 import SectionWrapper from '../../atoms/sectionWrapper/SectionWrapper';
 import Logo from '../../atoms/logo/Logo';
 import ShopNavigation from '../shopNavigation/ShopNavigation';
 import MainHeaderNavigation from '../mainHeaderNavigation/MainHeaderNavigation';
 
-import categories from '../../../assets/static/categories.json';
+import mockCategories from '../../../assets/static/categories.json';
 
 const AppHeader = ({ ...props }) => {
   const theme = useTheme();
+  let categories = [];
+
+  const { loading, results, error } = useDataFetching(
+    '/store-api/v1/navigation/main-navigation/main-navigation',
+    {
+      includes: {
+        category: ['id', 'name', 'children', 'childCount'],
+      },
+      buildTree: true,
+      depth: 3,
+    }
+  );
+
+  if (loading || error) {
+    return loading ? null : (categories = mockCategories);
+  }
+
+  categories = results;
 
   return (
     <StyledHeader theme={theme} {...props}>
