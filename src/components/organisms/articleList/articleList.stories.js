@@ -4,7 +4,7 @@ import { withKnobs, select } from '@storybook/addon-knobs';
 import styled from '@emotion/styled';
 
 import ArticleList from './ArticleList';
-import articles from '../../../assets/static/articles.json';
+import articles from '../../../assets/static/articles_sw.json';
 
 export default {
   component: ArticleList,

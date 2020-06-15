@@ -7,8 +7,8 @@ import SectionWrapper from '../components/atoms/sectionWrapper/SectionWrapper';
 import ArticleList from '../components/organisms/articleList/ArticleList';
 import CategoryHeader from '../components/organisms/categoryHeader/CategoryHeader';
 
-import articles from '../assets/static/articles.json';
-import categories from '../assets/static/categories.json';
+import articles from '../assets/static/articles_sw.json';
+import categories from '../assets/static/categories_sw.json';
 
 // Default ListingContext
 export let ListingContext = createContext({
@@ -25,7 +25,7 @@ const Listing = ({ categoryID }) => {
 
   // Articles by categoryID
   const categoryArticles = articles.filter((article) => {
-    return article.categoryID === parseInt(categoryID);
+    return article.categoryID === categoryID;
   });
 
   // Articles Fallback: All articles
@@ -34,7 +34,7 @@ const Listing = ({ categoryID }) => {
 
   // CategoryData
   const currentCategory = categories.filter((category) => {
-    return category.id === parseInt(categoryID);
+    return category.id === categoryID;
   });
 
   // BoxLayout incl. fallback

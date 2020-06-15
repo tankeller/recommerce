@@ -8,7 +8,7 @@ import Logo from '../../atoms/logo/Logo';
 import ShopNavigation from '../shopNavigation/ShopNavigation';
 import MainHeaderNavigation from '../mainHeaderNavigation/MainHeaderNavigation';
 
-import categories from '../../../assets/static/categories.json';
+import categories from '../../../assets/static/categories_sw.json';
 
 const AppHeader = ({ ...props }) => {
   const theme = useTheme();
