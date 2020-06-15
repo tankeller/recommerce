@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function useDataFetching(dataSource, data = {}) {
+function useDataFetching(dataSource, data) {
   const [loading, setLoading] = useState(true);
   const [results, setResults] = useState([]);
   const [error, setError] = useState('');
+  const [requestData, _] = useState(data);
 
   useEffect(() => {
     axios
-      .post(dataSource, data)
+      .post(dataSource, requestData)
       .then((response) => {
         setResults(response.data);
         setLoading(false);
@@ -17,7 +18,7 @@ function useDataFetching(dataSource, data = {}) {
         setLoading(false);
         setError(error);
       });
-  }, [dataSource, data]);
+  }, [dataSource, requestData]);
 
   return {
     loading,
