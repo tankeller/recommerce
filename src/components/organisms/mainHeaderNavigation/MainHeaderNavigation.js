@@ -56,18 +56,17 @@ const MainHeaderNavigation = ({ showHomeLink, categories, ...props }) => {
         )}
         {categories.map((category) => {
           return (
-            <NavListElement
-              key={category.id}
-              isActive={category.active ? true : false}
-            >
-              <NavLink
-                to={`category/${category.id}`}
-                onClick={closeMenu}
-                tabIndex={tabIndex}
-              >
-                {category.name}
-              </NavLink>
-            </NavListElement>
+            category.active && (
+              <NavListElement key={category.id}>
+                <NavLink
+                  to={`category/${category.id}`}
+                  onClick={closeMenu}
+                  tabIndex={tabIndex}
+                >
+                  {category.name}
+                </NavLink>
+              </NavListElement>
+            )
           );
         })}
       </Navigation>

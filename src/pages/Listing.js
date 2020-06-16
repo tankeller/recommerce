@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
+import { createContext, useContext } from 'react';
 
 import PageTemplate from '../components/templates/PageTemplate';
 import SectionWrapper from '../components/atoms/sectionWrapper/SectionWrapper';
@@ -7,27 +8,27 @@ import ArticleList from '../components/organisms/articleList/ArticleList';
 import CategoryHeader from '../components/organisms/categoryHeader/CategoryHeader';
 
 import useDataFetching from '../assets/hooks/useDataFetching';
-import articles from '../assets/static/articles.json';
-import mockCategories from '../assets/static/categories.json';
+
+import articles from '../assets/static/articles_sw.json';
+import mockCategories from '../assets/static/categories_sw.json';
+
+// Default ListingContext
+export let ListingContext = createContext({
+  boxLayout: '',
+  category: {
+    name: '',
+    id: '',
+    articles: [],
+  },
+});
 
 const Listing = ({ categoryID }) => {
+  const context = useContext(ListingContext);
+
   let currentArticles = [];
 
   const { loading, results, error } = useDataFetching(
-    `/store-api/v1/product-listing/${categoryID}`,
-    {
-      includes: {
-        product_listing_sorting: ['key'],
-        product_manufacturer: ['id', 'name'],
-        price_aggregation: ['min', 'max'],
-        product_group: ['id', 'name', 'options'],
-        product_group_option: ['id', 'name'],
-        product: ['id', 'name', 'calculatedPrice', 'cover'],
-        media: ['id', 'url'],
-        product_media: ['media'],
-        calculated_price: ['unitPrice', 'totalPrice'],
-      },
-    }
+    `/store-api/v1/product-listing/${categoryID}`
   );
 
   if (loading) {
@@ -35,7 +36,7 @@ const Listing = ({ categoryID }) => {
   } else if (error) {
     // Articles by categoryID
     const categoryArticles = articles.filter((article) => {
-      return article.categoryID === parseInt(categoryID);
+      return article.categoryID === categoryID;
     });
 
     // Articles Fallback: All articles
@@ -47,23 +48,31 @@ const Listing = ({ categoryID }) => {
 
   // CategoryData
   const currentCategory = mockCategories.filter((category) => {
-    return category.id === parseInt(categoryID);
+    return category.id === categoryID;
   });
 
   // BoxLayout Fallback
   if (currentCategory.length === 0) {
     currentCategory[0] = mockCategories[0];
   }
-  const boxLayout = !currentCategory[0].layout
+
+  // BoxLayout incl. fallback
+  context.boxLayout = !currentCategory[0].layout
     ? 'basic'
     : currentCategory[0].layout;
 
+  // Update ListingContext
+  context.category.name = currentCategory[0].name;
+  context.category.id = currentCategory[0].id;
+
   return (
     <SectionWrapper>
-      <CategoryHeader categoryName={currentCategory[0].name} />
-      <PageTemplate>
-        <ArticleList articles={currentArticles} boxLayout={boxLayout} />
-      </PageTemplate>
+      <ListingContext.Provider value={context}>
+        <CategoryHeader categoryName={currentCategory[0].name} />
+        <PageTemplate>
+          <ArticleList articles={currentArticles} />
+        </PageTemplate>
+      </ListingContext.Provider>
     </SectionWrapper>
   );
 };

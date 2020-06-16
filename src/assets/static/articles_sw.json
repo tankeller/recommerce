@@ -5,7 +5,7 @@
     "name": "Kaffeetasse - Marvel Comics, Keramik, Mehrfarbig, 7.9x11x9.3 cm",
     "slug": "Kaffeetasse-Marvel-Keramik-Mehrfarbig-7.9x11x9.3-cm",
     "supplier": "Marvel",
-    "categoryID": 45,
+    "categoryID": "1091d442670643a9b7614241000cf29f",
     "price": 19.25,
     "listPrice": null
   },
@@ -15,7 +15,7 @@
     "name": "Levi's Herren Graphic Set-in Neck T-Shirt",
     "slug": "Levis-Herren-Graphic-Set-in-Neck-T-Shirt",
     "supplier": "Levi's",
-    "categoryID": 78,
+    "categoryID": "6d27c8824b284807aa1aed118bf813de",
     "price": 27.98,
     "listPrice": null
   },
@@ -25,7 +25,7 @@
     "name": "Converse Chuck Taylor All Star Season Hi, Unisex Sneaker",
     "slug": "Converse-Chuck-Taylor-All-Star-Season-Hi-Unisex-Sneaker",
     "supplier": "Converse",
-    "categoryID": 78,
+    "categoryID": "6d27c8824b284807aa1aed118bf813de",
     "price": 80.98,
     "listPrice": null
   },
@@ -35,7 +35,7 @@
     "name": "Levi's Herren 501-Original Fit Jeanshosen",
     "slug": "Levis-Herren-501-Original-Fit-Jeanshosen",
     "supplier": "Levi's",
-    "categoryID": 78,
+    "categoryID": "6d27c8824b284807aa1aed118bf813de",
     "price": 89.48,
     "listPrice": null
   },
@@ -45,7 +45,7 @@
     "name": "Bose QuietComfort 35 (Serie II) kabellose Kopfhörer, Noise Cancelling, mit Alexa-Sprachsteuerung, Schwarz",
     "slug": "Bose-QuietComfort-35-Serie-II-kabellose-Kopfhörer-Noise-Cancelling",
     "supplier": "Bose",
-    "categoryID": 34,
+    "categoryID": "a58782889fc441aaa3eaf349752705c2",
     "price": 245.35,
     "listPrice": 279.98
   },
@@ -55,7 +55,7 @@
     "name": "Apple MacBook Pro (16\", 16GB RAM, 512GB Speicherplatz, 2,6GHz Intel Core i7) - Space Grau",
     "slug": "Apple-MacBook-Pro-16-Zoll-16GB-RAM-512GB-Speicherplatz-Intel-Core-i7",
     "supplier": "Apple",
-    "categoryID": 34,
+    "categoryID": "a58782889fc441aaa3eaf349752705c2",
     "price": 2389.99,
     "listPrice": null
   },
@@ -65,7 +65,7 @@
     "name": "Levi's Damen 'Unbasic' Hoodie Kapuzenpullover",
     "slug": "Levis-Damen-Unbasic-Hoodie-Kapuzenpullover",
     "supplier": "Levi's",
-    "categoryID": 78,
+    "categoryID": "6d27c8824b284807aa1aed118bf813de",
     "price": 36.67,
     "listPrice": 55.54
   },
@@ -75,7 +75,7 @@
     "name": "Apple iPhone 11 (64 GB) - Schwarz",
     "slug": "Apple-iPhone-11-64GB",
     "supplier": "Apple",
-    "categoryID": 34,
+    "categoryID": "a58782889fc441aaa3eaf349752705c2",
     "price": 749.99,
     "listPrice": 799.0
   },
@@ -85,7 +85,7 @@
     "name": "Blend Hulker Herren Sweatjacke Kapuzenjacke Hoodie mit Kapuze und Reißverschluss",
     "slug": "Blend-Hulker-Herren-Sweatjacke-Kapuzenjacke-Hoodie-mit-Kapuze-und-Reißverschluss",
     "supplier": "Blend",
-    "categoryID": 78,
+    "categoryID": "6d27c8824b284807aa1aed118bf813de",
     "price": 48.33,
     "listPrice": 56.17
   },
@@ -95,7 +95,7 @@
     "name": "Jogginghose - black/white",
     "slug": "Jogginghose-black-white",
     "supplier": "BARKARAMA",
-    "categoryID": 68,
+    "categoryID": "c1ab274349274741b2bfec3283d4ff84",
     "price": 21.86,
     "listPrice": 82.92
   },
@@ -105,7 +105,7 @@
     "name": "Core Eleven Fooball Hoodie Sweat - Kapuzenpullover",
     "slug": "Core-Eleven-Fooball-Hoodie-Sweat-Kapuzenpullover",
     "supplier": "Adidas",
-    "categoryID": 68,
+    "categoryID": "c1ab274349274741b2bfec3283d4ff84",
     "price": 29.69,
     "listPrice": 63.56
   },
@@ -115,7 +115,7 @@
     "name": "3 STRIPES TEE - T-Shirt print - black",
     "slug": "3-Stripes-Tee-T-Shirt-print-black",
     "supplier": "Adidas",
-    "categoryID": 78,
+    "categoryID": "6d27c8824b284807aa1aed118bf813de",
     "price": 34.99,
     "listPrice": null
   },
@@ -125,7 +125,7 @@
     "name": "Esszimmerstuhl Cassidy mit Stoffbezug und sesselförmigem gepolstertem Sitz",
     "slug": "Esszimmerstuhl-Cassidy-mit-Stoffbezug-und-sesselförmigem-gepolstertem-Sitz",
     "supplier": "CLP",
-    "categoryID": 115,
+    "categoryID": "97391b6eaedf409a9a116965e942ce36",
     "price": 88.29,
     "listPrice": null
   },
@@ -135,7 +135,7 @@
     "name": "Ohrensessel Milo für Wohnzimmer & Esszimmer! Skandinawisch, Relaxsessel aus Webstoff",
     "slug": "Ohrensessel-Milo-für-Wohnzimmer-und-Esszimmer-Skandinawisch",
     "supplier": "Sofini",
-    "categoryID": 115,
+    "categoryID": "97391b6eaedf409a9a116965e942ce36",
     "price": 110.04,
     "listPrice": 117.12
   },
@@ -145,7 +145,7 @@
     "name": "Movian Lina - Ruhesessel, 82 x 84 x 82 cm (L x B x H), Petrol, lackierte Buchenholzbeine",
     "slug": "Movian-Lina-Ruhesessel-82x84x82cm-Petrol-lackierte-Buchenholzbeine",
     "supplier": "Movia",
-    "categoryID": 115,
+    "categoryID": "97391b6eaedf409a9a116965e942ce36",
     "price": 225.95,
     "listPrice": 259.07
   },
@@ -155,7 +155,7 @@
     "name": "WOLTU Esszimmerstuhl",
     "slug": "WOLTU-Esszimmerstuhl",
     "supplier": "Woltu",
-    "categoryID": 115,
+    "categoryID": "97391b6eaedf409a9a116965e942ce36",
     "price": 61.78,
     "listPrice": 67.21
   },
@@ -165,7 +165,7 @@
     "name": "Pop Art Leinwand Justice League, canvas holz (76cm x 50cm)",
     "slug": "Pop-Art-Leinwand-Justice-League-canvas-holz-76cmx50cm",
     "supplier": "DC Comics",
-    "categoryID": 45,
+    "categoryID": "1091d442670643a9b7614241000cf29f",
     "price": 34.97,
     "listPrice": 45.41
   },
@@ -175,7 +175,7 @@
     "name": "JBL Xtreme Spritzwasserfester Tragbarer Bluetooth Lautsprecher mit 10,000 mAh Akku",
     "slug": "JBL-Xtreme-Spritzwasserfester-Tragbarer-Bluetooth-Lautsprecher",
     "supplier": "JBL",
-    "categoryID": 34,
+    "categoryID": "a58782889fc441aaa3eaf349752705c2",
     "price": 139.78,
     "listPrice": null
   },
@@ -185,7 +185,7 @@
     "name": "Fossil Chronograph FS5586 Edelstahl",
     "slug": "Fossil-Chronograph-FS5586-Edelstahl",
     "supplier": "Fossil",
-    "categoryID": 34,
+    "categoryID": "a58782889fc441aaa3eaf349752705c2",
     "price": 84.49,
     "listPrice": null
   },
@@ -204,7 +204,7 @@
     "name": "adidas Damen Courtset Fitnessschuhe",
     "slug": "adidas-Damen-Courtset-Fitnessschuhe",
     "supplier": "Adidas",
-    "categoryID": 78,
+    "categoryID": "6d27c8824b284807aa1aed118bf813de",
     "price": 34.24,
     "listPrice": 60.7
   },
@@ -214,7 +214,7 @@
     "name": "TOMMY JEANS T-Shirt 'TJM ORIGINAL JERSEY V NECK TEE', weiß, XXL (56)",
     "slug": "TOMMY-JEANS-T-Shirt-TJM-ORIGINAL-JERSEY-V-NECK-TEE-weiß-XXL",
     "supplier": "Tommy Hilfiger",
-    "categoryID": 78,
+    "categoryID": "6d27c8824b284807aa1aed118bf813de",
     "price": 19.07,
     "listPrice": 24.22
   },
@@ -224,7 +224,7 @@
     "name": "Wickel-Rock mit Muster, Raffung und Knoten",
     "slug": "Wickel-Rock-mit-Muster-Raffung-und-Knoten",
     "supplier": "Shein",
-    "categoryID": 78,
+    "categoryID": "6d27c8824b284807aa1aed118bf813de",
     "price": 14.14,
     "listPrice": null
   },

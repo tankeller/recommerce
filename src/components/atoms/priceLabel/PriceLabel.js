@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
+import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
 const PriceLabel = ({
@@ -9,19 +10,22 @@ const PriceLabel = ({
   currencyPosition,
   ...props
 }) => {
+  // Format price into host-standard-language: 30.000,65
+  const formatPrice = (num) => {
+    return num.toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+  };
+
+  price = formatPrice(price);
+
   return (
-    <span
-      css={{
-        fontSize: crossed ? '1rem' : '1.25rem',
-        lineHeight: '1.5rem',
-        color: '#828282',
-        textDecoration: crossed ? 'line-through' : 'none',
-        marginRight: crossed ? 3 : 0,
-      }}
-      {...props}
-    >
-      {currencyPosition === 'trailing' ? price + currency : currency + price}
-    </span>
+    <StyledPriceLabel crossed={crossed} {...props}>
+      {currencyPosition === 'trailing'
+        ? `${price} ${currency}`
+        : `${currency} ${price} `}
+    </StyledPriceLabel>
   );
 };
 
@@ -39,3 +43,14 @@ PriceLabel.propTypes = {
 };
 
 export default PriceLabel;
+
+/**
+ * Styling
+ */
+export const StyledPriceLabel = styled.span`
+  color: #828282;
+  line-height: 1.5rem;
+  font-size: ${({ crossed }) => (crossed ? '1rem' : '1.25rem')};
+  text-decoration: ${({ crossed }) => (crossed ? 'line-through' : 'none')};
+  margin-right: ${({ crossed }) => (crossed ? '5px' : '0')};
+`;

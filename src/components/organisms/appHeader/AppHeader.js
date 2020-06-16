@@ -9,21 +9,14 @@ import Logo from '../../atoms/logo/Logo';
 import ShopNavigation from '../shopNavigation/ShopNavigation';
 import MainHeaderNavigation from '../mainHeaderNavigation/MainHeaderNavigation';
 
-import mockCategories from '../../../assets/static/categories.json';
+import mockCategories from '../../../assets/static/categories_sw.json';
 
 const AppHeader = ({ ...props }) => {
   const theme = useTheme();
   let categories = [];
 
   const { loading, results, error } = useDataFetching(
-    '/store-api/v1/navigation/main-navigation/main-navigation',
-    {
-      includes: {
-        category: ['id', 'name', 'children', 'childCount'],
-      },
-      buildTree: true,
-      depth: 3,
-    }
+    '/store-api/v1/navigation/main-navigation/main-navigation'
   );
 
   if (loading || error) {

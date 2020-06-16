@@ -10,8 +10,17 @@ import NavListElement from '../components/atoms/navListElement/NavListElement';
 import ImagePlaceholder from '../components/atoms/imgPlaceholder/ImgPlaceholder';
 import Img from '../components/atoms/img/Img';
 import FALLBACK_IMAGE_URL from '../assets/static/logo.png';
+import ArticleBox from '../components/organisms/articleBox/ArticleBox';
 
 import Days from '../assets/static/dummy/demoList.json';
+
+const article = {
+  id: 1,
+  name: 'Summer Jacket Performance',
+  price: 75.9,
+  img:
+    'https://demo.storefrontcloud.io/img/310/300/resize/m/j/mj11-black_main.jpg',
+};
 
 const Home = ({ props }) => {
   const theme = useTheme();
@@ -39,6 +48,8 @@ const Home = ({ props }) => {
         src="https://fakeimg.pl/250x250/f5f5f5/999/?font=bebas&font_size=32&text=Coffee"
         srcOnError={FALLBACK_IMAGE_URL}
       />
+
+      <ArticleBox article={article} boxLayout="image" />
     </SectionWrapper>
   );
 };
