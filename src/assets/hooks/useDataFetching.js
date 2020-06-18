@@ -5,7 +5,7 @@ function useDataFetching(dataSource, data) {
   const [loading, setLoading] = useState(true);
   const [results, setResults] = useState([]);
   const [error, setError] = useState('');
-  const [requestData, _] = useState(data);
+  const [requestData] = useState(data);
 
   useEffect(() => {
     axios
