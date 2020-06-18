@@ -8,6 +8,7 @@ import ArticleList from '../components/organisms/articleList/ArticleList';
 import CategoryHeader from '../components/organisms/categoryHeader/CategoryHeader';
 
 import useDataFetching from '../assets/hooks/useDataFetching';
+import swProcessor from '../assets/utils/api/shopwareArticleProcessor';
 
 import articles from '../assets/static/articles_sw.json';
 import mockCategories from '../assets/static/categories_sw.json';
@@ -43,7 +44,7 @@ const Listing = ({ categoryID }) => {
     currentArticles =
       categoryArticles.length !== 0 ? categoryArticles : articles;
   } else if (results) {
-    currentArticles = results.elements;
+    currentArticles = swProcessor(results.elements);
   }
 
   // CategoryData

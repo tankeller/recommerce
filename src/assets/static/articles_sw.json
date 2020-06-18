@@ -7,7 +7,11 @@
     "supplier": "Marvel",
     "categoryID": "1091d442670643a9b7614241000cf29f",
     "price": 19.25,
-    "listPrice": null
+    "listPrice": null,
+    "isNew": false,
+    "stock": 8,
+    "description": "Ist halt Keramik, und von Marvel, was willste mehr?",
+    "closeout": false
   },
   {
     "id": 800354,
@@ -17,7 +21,11 @@
     "supplier": "Levi's",
     "categoryID": "6d27c8824b284807aa1aed118bf813de",
     "price": 27.98,
-    "listPrice": null
+    "listPrice": null,
+    "isNew": false,
+    "stock": 1,
+    "description": "Leude macht euch keine Sorgen, das ist ein Klasse Tshirt. Vielleicht ein bisschen größer kaufen",
+    "closeout": true
   },
   {
     "id": 263210,
@@ -27,7 +35,11 @@
     "supplier": "Converse",
     "categoryID": "6d27c8824b284807aa1aed118bf813de",
     "price": 80.98,
-    "listPrice": null
+    "listPrice": null,
+    "isNew": true,
+    "stock": 100,
+    "description": "Mit diesen Sneakern bist du nicht nur Unisex sondern das reinste SEXSYMBOL",
+    "closeout": true
   },
   {
     "id": 86506,
@@ -37,7 +49,11 @@
     "supplier": "Levi's",
     "categoryID": "6d27c8824b284807aa1aed118bf813de",
     "price": 89.48,
-    "listPrice": null
+    "listPrice": null,
+    "isNew": true,
+    "stock": 48,
+    "description": "Jeanshosen werden seit 1672 in den Verinigten Staaten entwickelt von jemandem der so heißt wie Jans Sohn",
+    "closeout": false
   },
   {
     "id": 413505,
@@ -47,7 +63,11 @@
     "supplier": "Bose",
     "categoryID": "a58782889fc441aaa3eaf349752705c2",
     "price": 245.35,
-    "listPrice": 279.98
+    "listPrice": 279.98,
+    "isNew": true,
+    "stock": 100,
+    "description": "Mit diesen Sneakern bist du nicht nur Unisex sondern das reinste SEXSYMBOL",
+    "closeout": false
   },
   {
     "id": 942725,
@@ -57,7 +77,11 @@
     "supplier": "Apple",
     "categoryID": "a58782889fc441aaa3eaf349752705c2",
     "price": 2389.99,
-    "listPrice": null
+    "listPrice": null,
+    "isNew": false,
+    "stock": 100,
+    "description": "Mit diesen Sneakern bist du nicht nur Unisex sondern das reinste SEXSYMBOL",
+    "closeout": true
   },
   {
     "id": 904890,
@@ -67,7 +91,11 @@
     "supplier": "Levi's",
     "categoryID": "6d27c8824b284807aa1aed118bf813de",
     "price": 36.67,
-    "listPrice": 55.54
+    "listPrice": 55.54,
+    "isNew": true,
+    "stock": 100,
+    "description": "Mit diesen Sneakern bist du nicht nur Unisex sondern das reinste SEXSYMBOL",
+    "closeout": true
   },
   {
     "id": 892217,
@@ -77,7 +105,11 @@
     "supplier": "Apple",
     "categoryID": "a58782889fc441aaa3eaf349752705c2",
     "price": 749.99,
-    "listPrice": 799.0
+    "listPrice": 799.0,
+    "isNew": true,
+    "stock": 100,
+    "description": "Mit diesen Sneakern bist du nicht nur Unisex sondern das reinste SEXSYMBOL",
+    "closeout": true
   },
   {
     "id": 237266,
@@ -87,7 +119,11 @@
     "supplier": "Blend",
     "categoryID": "6d27c8824b284807aa1aed118bf813de",
     "price": 48.33,
-    "listPrice": 56.17
+    "listPrice": 56.17,
+    "isNew": true,
+    "stock": 100,
+    "description": "Mit diesen Sneakern bist du nicht nur Unisex sondern das reinste SEXSYMBOL",
+    "closeout": true
   },
   {
     "id": 364684,
@@ -97,7 +133,11 @@
     "supplier": "BARKARAMA",
     "categoryID": "c1ab274349274741b2bfec3283d4ff84",
     "price": 21.86,
-    "listPrice": 82.92
+    "listPrice": 82.92,
+    "isNew": true,
+    "stock": 100,
+    "description": "Mit diesen Sneakern bist du nicht nur Unisex sondern das reinste SEXSYMBOL",
+    "closeout": true
   },
   {
     "id": 674577,
@@ -107,7 +147,11 @@
     "supplier": "Adidas",
     "categoryID": "c1ab274349274741b2bfec3283d4ff84",
     "price": 29.69,
-    "listPrice": 63.56
+    "listPrice": 63.56,
+    "isNew": true,
+    "stock": 100,
+    "description": "Mit diesen Sneakern bist du nicht nur Unisex sondern das reinste SEXSYMBOL",
+    "closeout": true
   },
   {
     "id": 108836,
@@ -117,7 +161,11 @@
     "supplier": "Adidas",
     "categoryID": "6d27c8824b284807aa1aed118bf813de",
     "price": 34.99,
-    "listPrice": null
+    "listPrice": null,
+    "isNew": true,
+    "stock": 100,
+    "description": "Mit diesen Sneakern bist du nicht nur Unisex sondern das reinste SEXSYMBOL",
+    "closeout": true
   },
   {
     "id": 189281,
@@ -127,7 +175,11 @@
     "supplier": "CLP",
     "categoryID": "97391b6eaedf409a9a116965e942ce36",
     "price": 88.29,
-    "listPrice": null
+    "listPrice": null,
+    "isNew": true,
+    "stock": 100,
+    "description": "Mit diesen Sneakern bist du nicht nur Unisex sondern das reinste SEXSYMBOL",
+    "closeout": true
   },
   {
     "id": 550048,
@@ -137,7 +189,11 @@
     "supplier": "Sofini",
     "categoryID": "97391b6eaedf409a9a116965e942ce36",
     "price": 110.04,
-    "listPrice": 117.12
+    "listPrice": 117.12,
+    "isNew": true,
+    "stock": 100,
+    "description": "Mit diesen Sneakern bist du nicht nur Unisex sondern das reinste SEXSYMBOL",
+    "closeout": true
   },
   {
     "id": 415087,
@@ -147,7 +203,11 @@
     "supplier": "Movia",
     "categoryID": "97391b6eaedf409a9a116965e942ce36",
     "price": 225.95,
-    "listPrice": 259.07
+    "listPrice": 259.07,
+    "isNew": true,
+    "stock": 100,
+    "description": "Mit diesen Sneakern bist du nicht nur Unisex sondern das reinste SEXSYMBOL",
+    "closeout": true
   },
   {
     "id": 212525,
@@ -157,7 +217,11 @@
     "supplier": "Woltu",
     "categoryID": "97391b6eaedf409a9a116965e942ce36",
     "price": 61.78,
-    "listPrice": 67.21
+    "listPrice": 67.21,
+    "isNew": true,
+    "stock": 100,
+    "description": "Mit diesen Sneakern bist du nicht nur Unisex sondern das reinste SEXSYMBOL",
+    "closeout": true
   },
   {
     "id": 826384,
@@ -167,7 +231,11 @@
     "supplier": "DC Comics",
     "categoryID": "1091d442670643a9b7614241000cf29f",
     "price": 34.97,
-    "listPrice": 45.41
+    "listPrice": 45.41,
+    "isNew": true,
+    "stock": 100,
+    "description": "Mit diesen Sneakern bist du nicht nur Unisex sondern das reinste SEXSYMBOL",
+    "closeout": true
   },
   {
     "id": 159420,
@@ -177,7 +245,11 @@
     "supplier": "JBL",
     "categoryID": "a58782889fc441aaa3eaf349752705c2",
     "price": 139.78,
-    "listPrice": null
+    "listPrice": null,
+    "isNew": true,
+    "stock": 100,
+    "description": "Mit diesen Sneakern bist du nicht nur Unisex sondern das reinste SEXSYMBOL",
+    "closeout": true
   },
   {
     "id": 834533,
@@ -187,7 +259,11 @@
     "supplier": "Fossil",
     "categoryID": "a58782889fc441aaa3eaf349752705c2",
     "price": 84.49,
-    "listPrice": null
+    "listPrice": null,
+    "isNew": true,
+    "stock": 100,
+    "description": "Mit diesen Sneakern bist du nicht nur Unisex sondern das reinste SEXSYMBOL",
+    "closeout": true
   },
   {
     "id": 952846,
@@ -196,7 +272,11 @@
     "slug": "WMF-Devil-Pfannenset-2-teilig-Edelstahl-beschichtet",
     "supplier": "WMF",
     "price": 69.34,
-    "listPrice": 73.34
+    "listPrice": 73.34,
+    "isNew": true,
+    "stock": 100,
+    "description": "Mit diesen Sneakern bist du nicht nur Unisex sondern das reinste SEXSYMBOL",
+    "closeout": true
   },
   {
     "id": 384379,
@@ -206,7 +286,11 @@
     "supplier": "Adidas",
     "categoryID": "6d27c8824b284807aa1aed118bf813de",
     "price": 34.24,
-    "listPrice": 60.7
+    "listPrice": 60.7,
+    "isNew": true,
+    "stock": 100,
+    "description": "Mit diesen Sneakern bist du nicht nur Unisex sondern das reinste SEXSYMBOL",
+    "closeout": true
   },
   {
     "id": 810050,
@@ -216,7 +300,11 @@
     "supplier": "Tommy Hilfiger",
     "categoryID": "6d27c8824b284807aa1aed118bf813de",
     "price": 19.07,
-    "listPrice": 24.22
+    "listPrice": 24.22,
+    "isNew": true,
+    "stock": 100,
+    "description": "Mit diesen Sneakern bist du nicht nur Unisex sondern das reinste SEXSYMBOL",
+    "closeout": true
   },
   {
     "id": 594923,
@@ -226,7 +314,11 @@
     "supplier": "Shein",
     "categoryID": "6d27c8824b284807aa1aed118bf813de",
     "price": 14.14,
-    "listPrice": null
+    "listPrice": null,
+    "isNew": true,
+    "stock": 100,
+    "description": "Mit diesen Sneakern bist du nicht nur Unisex sondern das reinste SEXSYMBOL",
+    "closeout": true
   },
   {
     "id": 295574,
@@ -235,6 +327,10 @@
     "slug": "6-Stk-Teller-tief-Mamoro-schwarz-weiß-300ml-21x5cm",
     "supplier": "Vega",
     "price": 49.91,
-    "listPrice": 52.74
+    "listPrice": 52.74,
+    "isNew": true,
+    "stock": 100,
+    "description": "Mit diesen Sneakern bist du nicht nur Unisex sondern das reinste SEXSYMBOL",
+    "closeout": true
   }
 ]
