@@ -20,7 +20,5 @@ export default function processShopwareArticleData(shopwareArticles) {
     };
   });
 
-  console.log(processedArticles);
-
   return processedArticles;
 }
