@@ -3,6 +3,7 @@ import { jsx, css } from '@emotion/core';
 import styled from '@emotion/styled';
 import { useTheme } from 'emotion-theming';
 import { useContext } from 'react';
+import { Link } from '@reach/router';
 import { ListingContext } from '../../../pages/Listing';
 import PropTypes from 'prop-types';
 
@@ -25,11 +26,7 @@ const ArticleBox = ({ article, boxLayout, ...props }) => {
       boxLayout={customBoxLayout}
       {...props}
     >
-      <StyledArticleBoxLink
-        href={`/${article.name}`}
-        context={context}
-        boxLayout={customBoxLayout}
-      >
+      <StyledArticleBoxLink to={`/article/${article.id}`} context={context}>
         <ImageWrapper context={context} boxLayout={customBoxLayout}>
           <Img src={article.img} alt={article.name} />
         </ImageWrapper>
@@ -75,13 +72,13 @@ export const StyledArticleBox = styled.div`
     `}
 `;
 
-export const StyledArticleBoxLink = styled.a`
+export const StyledArticleBoxLink = styled(Link)`
   width: 100%;
   text-decoration: none;
   color: inherit;
 
   ${(props) =>
-    (props.context.boxLayout === 'list' || props.boxLayout === 'list') &&
+    props.context.boxLayout === 'list' &&
     css`
       display: flex;
       flex-wrap: wrap;
