@@ -3,8 +3,8 @@ import axios from 'axios';
 
 function useDataFetching(dataSource, data) {
   const [loading, setLoading] = useState(true);
-  const [results, setResults] = useState([]);
-  const [error, setError] = useState('');
+  const [results, setResults] = useState();
+  const [error, setError] = useState();
   const [requestData] = useState(data);
 
   useEffect(() => {
