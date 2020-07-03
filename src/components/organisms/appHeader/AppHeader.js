@@ -15,12 +15,13 @@ const AppHeader = ({ ...props }) => {
   const theme = useTheme();
   let categories = [];
 
+  // eslint-disable-next-line
   const { loading, results, error } = useDataFetching(
     '/store-api/v1/navigation/main-navigation/main-navigation'
   );
 
-  if (loading || error) {
-    return loading ? <p>loading</p> : <p>There was an Error.</p>;
+  if (loading) {
+    return loading && <p>loading</p>;
   }
 
   categories = results;
