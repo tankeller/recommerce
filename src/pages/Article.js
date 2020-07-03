@@ -9,12 +9,13 @@ import SectionWrapper from '../components/atoms/sectionWrapper/SectionWrapper';
 import ArticleMedia from '../components/organisms/articleMedia/ArticleMedia';
 
 const Article = ({ articleID }) => {
+  // eslint-disable-next-line
   const { loading, results, error } = useSalesChannelAPI(
     `/sales-channel-api/v1/product/${articleID}`
   );
 
   if (loading) {
-    return <p>loading article</p>;
+    return loading && <p>Loading article</p>;
   }
 
   let article = processArticle(results);
@@ -23,7 +24,13 @@ const Article = ({ articleID }) => {
     <SectionWrapper>
       <ArticleDetail>
         <ArticleMedia article={article}></ArticleMedia>
-        <ArticleData article={article}>Test2</ArticleData>
+        <ArticleData article={article}>
+          <p>Nummer: {article.id}</p>
+          <p>Name: {article.name}</p>
+          <p>Hersteller: {article.supplier}</p>
+          <p>Preis: {article.price}</p>
+          <p>Beschreibung: {article.description}</p>
+        </ArticleData>
       </ArticleDetail>
     </SectionWrapper>
   );
@@ -36,7 +43,6 @@ export const ArticleDetail = styled.div`
 `;
 
 export const ArticleData = styled.div`
-  display: flex;
   width: 50%;
 `;
 
