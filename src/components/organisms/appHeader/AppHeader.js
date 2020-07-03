@@ -19,8 +19,8 @@ const AppHeader = ({ ...props }) => {
     '/store-api/v1/navigation/main-navigation/main-navigation'
   );
 
-  if (loading) {
-    return loading && <p>loading</p>;
+  if (loading || error) {
+    return loading ? <p>loading</p> : <p>There was an Error.</p>;
   }
 
   categories = results;
