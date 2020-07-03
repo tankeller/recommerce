@@ -19,11 +19,15 @@ const AppHeader = ({ ...props }) => {
     '/store-api/v1/navigation/main-navigation/main-navigation'
   );
 
-  if (loading || error) {
-    return loading ? null : (categories = mockCategories);
+  if (loading) {
+    return loading && <p>loading</p>;
   }
 
   categories = results;
+
+  if (categories === undefined || categories.length === 0) {
+    categories = mockCategories;
+  }
 
   return (
     <StyledHeader theme={theme} {...props}>
